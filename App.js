@@ -1,12 +1,23 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { Navigation } from "./src/navigation/Navigation";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { initFirebase } from "./src/utils/firebase";
+import { useEffect, useState } from "react";
+// import { StepOne } from "./src/screens/onboarding";
 
 export default function App() {
-  return (
-    <>
-      <NavigationContainer>
-        <Navigation />
-      </NavigationContainer>
-    </>
-  );
+  const [isAuth, setAuth] = useState(null);
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      setAuth(user ? true : false);
+    });
+  }, []);
+
+  return isAuth ? (
+    <NavigationContainer>
+      <Navigation />
+    </NavigationContainer>
+  ) : // <StepOne></StepOne>
+  null;
 }
