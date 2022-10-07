@@ -1,14 +1,25 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { Navigation } from "./src/navigation/Navigation";
-import OnboardingScreen from './src/views/OnboardingScreen'
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { initFirebase } from "./src/utils/firebase";
+import { useEffect, useState } from "react";
+// import { StepOne } from "./src/screens/onboarding";
+import OnboardingScreen from "./src/views/OnboardingScreen";
 
 export default function App() {
-  return (
-    <>
-      <OnboardingScreen></OnboardingScreen>
-      <NavigationContainer>
-        <Navigation />
-      </NavigationContainer>
-    </>
+  const [isAuth, setAuth] = useState(null);
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      setAuth(user ? true : false);
+    });
+  }, []);
+
+  return isAuth ? (
+    <NavigationContainer>
+      <Navigation />
+    </NavigationContainer>
+  ) : (
+    <OnboardingScreen></OnboardingScreen>
   );
 }
