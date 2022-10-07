@@ -7,7 +7,7 @@ const Veterinary = () => {
       showsVerticalScrollIndicator={false}
       style={{
         height: 100,
-        backgroundColor: "#044244",
+        backgroundColor: "#6852A5",
       }}
     >
       <View

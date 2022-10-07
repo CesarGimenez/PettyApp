@@ -11,7 +11,7 @@ const Navigation = () => {
       screenOptions={({ route }) => ({
         headerTransparent: true,
         headerShown: false,
-        tabBarActiveTintColor: "#00a680",
+        tabBarActiveTintColor: "#6852A5",
         tabBarInactiveTintColor: "gray",
         tabBarStyle: {
           position: "absolute",
