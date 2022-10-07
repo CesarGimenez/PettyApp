@@ -4,6 +4,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { initFirebase } from "./src/utils/firebase";
 import { useEffect, useState } from "react";
 // import { StepOne } from "./src/screens/onboarding";
+import OnboardingScreen from './views/OnboardingScreen'
 
 export default function App() {
   const [isAuth, setAuth] = useState(null);
