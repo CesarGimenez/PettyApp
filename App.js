@@ -4,7 +4,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { initFirebase } from "./src/utils/firebase";
 import { useEffect, useState } from "react";
 // import { StepOne } from "./src/screens/onboarding";
-import OnboardingScreen from './views/OnboardingScreen'
+import OnboardingScreen from "./src/views/OnboardingScreen";
 
 export default function App() {
   const [isAuth, setAuth] = useState(null);
@@ -19,6 +19,7 @@ export default function App() {
     <NavigationContainer>
       <Navigation />
     </NavigationContainer>
-  ) : // <StepOne></StepOne>
-  null;
+  ) : (
+    <OnboardingScreen></OnboardingScreen>
+  );
 }
