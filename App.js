@@ -3,7 +3,6 @@ import { Navigation } from "./src/navigation/Navigation";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { initFirebase } from "./src/utils/firebase";
 import { useEffect, useState } from "react";
-// import { StepOne } from "./src/screens/onboarding";
 import OnboardingScreen from "./src/views/OnboardingScreen";
 
 export default function App() {
