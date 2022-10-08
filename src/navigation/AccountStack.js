@@ -28,11 +28,6 @@ export function AccountStack() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name={screen.accountStack.login}
-        component={SignIn}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
         name={screen.accountStack.register}
         component={SignUp}
         options={{ headerShown: false }}
