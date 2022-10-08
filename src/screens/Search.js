@@ -8,7 +8,7 @@ const properties = [
   {
     id: "24reaf6r8er7852u",
     name: "Petty",
-    raza: "Cruzado",
+    breed: "Cruzado",
     age: "Cachorro",
     gender: 'M',
     photos: [
@@ -19,7 +19,7 @@ const properties = [
   {
     id: "4453fd343",
     name: "Sparky",
-    raza: "Corgi",
+    breed: "Corgi",
     age: "Cachorro",
     gender: 'M',
     photos: [
@@ -31,7 +31,7 @@ const properties = [
   {
     id: "2afomeoivioe4732u",
     name: "Docky",
-    raza: "Cruzado",
+    breed: "Cruzado",
     gender: 'M',
     age: "Adulto",
     photos: [
@@ -42,7 +42,7 @@ const properties = [
   {
     id: "2afomeoivi447852u",
     name: "Luna",
-    raza: "Shi Tzu",
+    breed: "Shi Tzu",
     age: "Cachorro",
     gender: 'F',
     photos: [
@@ -53,7 +53,7 @@ const properties = [
   {
     id: "2afomeogdijjnu",
     name: "Ponky",
-    raza: "Cruzado",
+    breed: "Cruzado",
     age: "Adulto",
     gender: 'F',
     photos: [
@@ -64,7 +64,7 @@ const properties = [
   {
     id: "2afomeoias45oe47852u",
     name: "Sam",
-    raza: "Raza",
+    breed: "breed",
     gender: 'M',
     age: "Cachorro",
     photos: [
@@ -135,7 +135,7 @@ const Search = () => {
           <Card
             heading={item.name}
             images={item.photos}
-            subheading={item.raza}
+            subheading={item.breed}
             age={item.age}
             gender={item.gender}
             favorite={item.favorite}
