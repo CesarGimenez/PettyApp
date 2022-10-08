@@ -94,6 +94,18 @@ const Search = () => {
 
 
     <View>
+      <TextInput            
+            placeholder="Altamira, Caracas"
+            style={{
+              fontSize: 15,
+              backgroundColor: "#F6F4F9",
+              borderRadius: 25,
+              padding: 5,
+              paddingLeft: 10,
+              marginTop: 10,              
+            }}
+          ></TextInput>
+
       <SearchBar
           placeholder="Buscar"
           lightTheme
@@ -102,18 +114,18 @@ const Search = () => {
           autoCorrect={false}
           searchIcon={{ size: 24 }}
           onClear={() => console.log('Bye')}
+
+          inputContainerStyle={{
+            backgroundColor: 'white'
+          }}
+          
+          style={{
+            borderRadius: 15,
+            backgroundColor:'white', 
+            padding:10,          
+          }}
         />
-      <TextInput
-            placeholder="Que esta pasando?"
-            style={{
-              borderColor: "#FFF",
-              fontSize: 15,
-              backgroundColor: "#FFFF",
-              borderRadius: 20,
-              padding: 5,
-              paddingLeft: 10,
-            }}
-          ></TextInput>
+      
        <FlatList
         data={properties}
         keyExtractor={(item) => item.id}
