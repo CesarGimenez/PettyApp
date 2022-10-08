@@ -1,9 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "react-native-elements";
 import React from "react";
-import { Account, Posts, Shelter, Veterinary } from "../screens";
+import { Posts, Veterinary } from "../screens";
 import { AccountStack } from "./AccountStack";
 import { screen } from "../utils";
+import { ShelterStack } from "./ShelterStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +34,7 @@ const Navigation = () => {
     >
       <Tab.Screen name="Feed" component={Posts} />
       <Tab.Screen name="Veterinario" component={Veterinary} />
-      <Tab.Screen name="Refugios" component={Shelter} />
+      <Tab.Screen name="Refugios" component={ShelterStack} />
       <Tab.Screen name="Cuenta" component={AccountStack} />
     </Tab.Navigator>
   );

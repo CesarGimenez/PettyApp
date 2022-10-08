@@ -6,7 +6,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { initialValues, validationSchema } from "./LoginForm.data";
 import { styles } from "./LoginForm.styles";
 import { screen } from "../../utils";
-import SignIn from "../../screens/signIn";
+import SignIn from "../../screens/SignUp";
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);

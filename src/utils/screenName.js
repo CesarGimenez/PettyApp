@@ -1,9 +1,7 @@
 const refugioStack = {
-  tab: "RestaurantsTab",
-  restaurants: "Restaurants",
-  addRestaurant: "AddRestaurant",
-  restaurant: "Restaurant",
-  addReviewRestaurant: "AddReviewRestaurant",
+  shelters: "Shelters",
+  mapShelters: "MapShelters",
+  addShelter: "AddShelters",
 };
 
 const feedStack = {
@@ -15,6 +13,7 @@ const accountStack = {
   tab: "AccountTab",
   account: "Cuenta",
   login: "Login",
+  loginSocial: "LoginSocial",
   register: "Register",
 };
 

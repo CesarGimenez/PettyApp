@@ -6,7 +6,7 @@ import { initFirebase } from "./src/utils/firebase";
 import { useEffect, useState } from "react";
 import OnboardingScreen from "./src/views/OnboardingScreen";
 import Login from "./src/screens/Login";
-import SignIn from "./src/screens/signIn";
+import SignIn from "./src/screens/SignIn";
 import SignUp from "./src/screens/SignUp";
 
 enableScreens();
@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      {isAuth ? <Navigation /> : <SignUp />}
+      {isAuth ? <Navigation /> : <SignIn />}
     </NavigationContainer>
   );
 }

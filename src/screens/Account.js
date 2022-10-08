@@ -1,7 +1,7 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Button } from "react-native";
 import React from "react";
 
-const Account = () => {
+const Account = ({ navigation }) => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -25,6 +25,10 @@ const Account = () => {
         >
           Tu perfil
         </Text>
+        <Button
+          title="pus"
+          onPress={() => navigation.navigate("Login")}
+        ></Button>
       </View>
     </ScrollView>
   );

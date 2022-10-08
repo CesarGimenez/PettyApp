@@ -3,10 +3,9 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { styles } from "./Styles";
 
-const Login = () => {
-  const navigation = useNavigation();
+const Login = ({ navigation }) => {
   const goToRegister = () => {
-    console.log("hola");
+    navigation.navigate("Register");
   };
   return (
     <ScrollView

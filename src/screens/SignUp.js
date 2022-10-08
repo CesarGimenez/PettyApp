@@ -1,6 +1,7 @@
 import { View, Text, ScrollView } from "react-native";
 import React from "react";
-import { LoginForm } from "../components/Login/LoginForm";
+import { styles } from "./Styles";
+import RegisterForm from "../components/Register/FormRegister";
 
 const SignUp = () => {
   return (
@@ -24,7 +25,7 @@ const SignUp = () => {
             paddingVertical: 25,
           }}
         >
-          Sign In
+          Sign Up
         </Text>
         <View
           style={{
@@ -34,7 +35,7 @@ const SignUp = () => {
             height: 500,
           }}
         >
-          <LoginForm />
+          <RegisterForm />
         </View>
       </View>
     </ScrollView>
