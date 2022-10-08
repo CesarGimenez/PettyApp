@@ -4,9 +4,10 @@ const refugioStack = {
   addShelter: "AddShelters",
 };
 
-const feedStack = {
-  tab: "FavoritesTab",
-  favorites: "Favorites",
+const searchStack = {
+  tab: "SearchTab",
+  search: "Search",
+  onboarding: "Onboarding",
 };
 
 const accountStack = {
@@ -19,6 +20,6 @@ const accountStack = {
 
 export const screen = {
   refugioStack: refugioStack,
-  feedStack: feedStack,
+  searchStack: searchStack,
   accountStack: accountStack,
 };

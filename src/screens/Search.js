@@ -2,7 +2,7 @@ import { View, Text, ScrollView, TextInput, Button } from "react-native";
 import { getAuth, signOut } from "firebase/auth";
 import React from "react";
 
-const Posts = () => {
+const Search = () => {
   const handleLogout = async () => {
     const auth = getAuth();
     await signOut(auth);
@@ -51,4 +51,4 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+export default Search;
