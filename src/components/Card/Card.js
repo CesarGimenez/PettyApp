@@ -18,7 +18,7 @@ import {
     images,
     heading,
     subheading,
-    edad,
+    age,
     gender,
     favorite,
     onPress,
@@ -27,7 +27,7 @@ import {
   }) {
 
 
-    const cachorro = edad == 'Cachorro' ? true : false
+    const cachorro = age == 'Cachorro' ? true : false
     const color = cachorro ? "#DED6F4" : "#F1E2D1"
     const fontColor = cachorro ? "#6852A5" : "#F1A852"
     const iconSexo = gender == 'M' 
@@ -101,7 +101,7 @@ import {
         {/* Text Container */}
         <Pressable onPress={onPress} style={styles.textContainer}>
           <View style={styles.genderContainer}>            
-            <Text style={{ backgroundColor: color, color: fontColor, paddingLeft:10, paddingRight:10, marginLeft: 10, marginRight: 120, borderRadius: 20}}>{edad}</Text>
+            <Text style={{ backgroundColor: color, color: fontColor, paddingLeft:10, paddingRight:10, marginLeft: 10, marginRight: 120, borderRadius: 20}}>{age}</Text>
             <Text style={{marginLeft:120, marginRight:10}}>{iconSexo}</Text>
           </View>
           
