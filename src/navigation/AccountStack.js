@@ -27,11 +27,6 @@ export function AccountStack() {
         component={Login}
         options={{ headerShown: false }}
       />
-      <Stack.Screen
-        name={screen.accountStack.register}
-        component={SignUp}
-        options={{ headerShown: false }}
-      />
     </Stack.Navigator>
   );
 }
