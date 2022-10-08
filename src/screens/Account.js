@@ -26,7 +26,7 @@ const Account = ({ navigation }) => {
           Tu perfil
         </Text>
         <Button
-          title="pus"
+          title="Unete!"
           onPress={() => navigation.navigate("Login")}
         ></Button>
       </View>

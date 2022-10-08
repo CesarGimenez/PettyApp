@@ -1,14 +1,19 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "react-native-elements";
 import React from "react";
-import { Posts, Veterinary } from "../screens";
+import { Veterinary } from "../screens";
 import { AccountStack } from "./AccountStack";
 import { screen } from "../utils";
 import { ShelterStack } from "./ShelterStack";
+import Search from "../screens/Search";
+import { SearchStack } from "./SearchStack";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
-const Navigation = () => {
+const Navigation = ({ route }) => {
+  const navigation = useNavigation();
+  console.log(route);
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -32,7 +37,7 @@ const Navigation = () => {
         },
       })}
     >
-      <Tab.Screen name="Feed" component={Posts} />
+      <Tab.Screen name="Search" component={SearchStack} />
       <Tab.Screen name="Veterinario" component={Veterinary} />
       <Tab.Screen name="Refugios" component={ShelterStack} />
       <Tab.Screen name="Cuenta" component={AccountStack} />
@@ -55,7 +60,7 @@ const IconOptions = (route, color, size) => {
     iconName = "home-heart";
   }
 
-  if (route?.name === "Feed") {
+  if (route?.name === "Search") {
     iconName = "paw";
   }
 
