@@ -1,8 +1,16 @@
-import { View, Text, ScrollView, TextInput, Button, Image, FlatList} from "react-native";
+import { View, Text, ScrollView, TextInput, Button, Image, FlatList, StyleSheet} from "react-native";
 import { SearchBar } from "react-native-elements";
 import { getAuth, signOut } from "firebase/auth";
 import React from "react";
 import Card from "../components/Card/Card";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
+
+
+const styles = StyleSheet.create({
+  barContainer: { flexDirection: "row", justifyContent: 'center', alignItems: 'center'},
+  searchContainer: {backgroundColor: 'white'}
+
+})
 
 const properties = [
   {
@@ -93,18 +101,8 @@ const Search = () => {
     </ScrollView> */
 
 
-    <View>
-      <TextInput            
-            placeholder="Altamira, Caracas"
-            style={{
-              fontSize: 15,
-              backgroundColor: "#F6F4F9",
-              borderRadius: 25,
-              padding: 5,
-              paddingLeft: 10,
-              marginTop: 10,              
-            }}
-      ></TextInput>
+    <View style={styles.searchContainer}>       
+     
 
       <SearchBar
           placeholder="Buscar"
@@ -114,10 +112,14 @@ const Search = () => {
           autoCorrect={false}
           searchIcon={{ size: 20 }}
           onClear={() => console.log('Bye')}
-
+          
+          containerStyle={{
+            backgroundColor: 'white',
+          }}
+          
           inputContainerStyle={{
             backgroundColor: 'white',
-            alignItems: 'center'
+            alignItems: 'center',
           }}
           
           style={{
