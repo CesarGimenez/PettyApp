@@ -2,6 +2,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "react-native-elements";
 import React from "react";
 import { Account, Posts, Shelter, Veterinary } from "../screens";
+import { AccountStack } from "./AccountStack";
+import { screen } from "../utils";
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +34,7 @@ const Navigation = () => {
       <Tab.Screen name="Feed" component={Posts} />
       <Tab.Screen name="Veterinario" component={Veterinary} />
       <Tab.Screen name="Refugios" component={Shelter} />
-      <Tab.Screen name="Mi cuenta" component={Account} />
+      <Tab.Screen name="Cuenta" component={AccountStack} />
     </Tab.Navigator>
   );
 };
@@ -40,7 +42,7 @@ const Navigation = () => {
 const IconOptions = (route, color, size) => {
   let iconName = "";
 
-  if (route?.name === "Mi cuenta") {
+  if (route?.name === "Cuenta") {
     iconName = "account";
   }
 

@@ -1,8 +1,12 @@
-import { View, Text, ScrollView, TextInput } from "react-native";
+import { View, Text, ScrollView, TextInput, Button } from "react-native";
+import { getAuth, signOut } from "firebase/auth";
 import React from "react";
-import { Button } from "react-native-elements";
 
 const Posts = () => {
+  const handleLogout = async () => {
+    const auth = getAuth();
+    await signOut(auth);
+  };
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -39,9 +43,10 @@ const Posts = () => {
               paddingLeft: 10,
             }}
           ></TextInput>
-          <Button>Publicar</Button>
+          <Button title="publicar"></Button>
         </View>
       </View>
+      <Button onPress={handleLogout} title="logout"></Button>
     </ScrollView>
   );
 };
