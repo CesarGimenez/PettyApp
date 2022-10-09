@@ -54,8 +54,9 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   textTitle: {
-    fontSize: 28,
-    color: "#FFF",
+    fontSize: 25,
+    textAlign: "center",
+    color: "black",
     marginTop: 280,
     alignSelf: "center",
     alignContent: "center",
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
   },
   textSubTitle: {
     fontSize: 25,
-    color: "#FFF",
+    color: "black",
     marginTop: 10,
     alignSelf: "center",
     alignContent: "center",
@@ -99,21 +100,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 22,
   },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
   button: {
     borderRadius: 20,
     padding: 10,
@@ -130,9 +116,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
-  modalText: {
-    marginBottom: 15,
+  bagde: {
+    width: 100,
+    padding: 10,
+    borderRadius: 50,
+    backgroundColor: "#9B8ACA",
     textAlign: "center",
+    color: "#FFF",
   },
 });
 
@@ -180,14 +170,24 @@ const ConfirmAdoption = ({ navigation, route }) => {
           }}
         />
 
-        <Text style={styles.textTitle}>{`FELICIDADES `}</Text>
+        <Text style={styles.textTitle}>Informacion de tu nueva mascota</Text>
 
-        <Text style={styles.textSubTitle}>{`estas a solo un paso de `}</Text>
-
+        <Text>Nombre de la mascota</Text>
+        <Text>{pet?.name}</Text>
+        <Text>Edad</Text>
+        <Text>{pet?.ade}</Text>
+        <Text>Raza</Text>
+        <Text>{pet?.breed}</Text>
+        <Text>Genero</Text>
+        {pet?.gender === "M" ? (
+          <Text style={styles.bagde}>Macho</Text>
+        ) : (
+          <Text style={styles.bagde}>Hembra</Text>
+        )}
         <Text
           style={{
-            fontSize: 25,
-            color: "#FFF",
+            fontSize: 20,
+            color: "black",
             marginTop: 10,
             alignSelf: "center",
             alignContent: "center",
@@ -195,26 +195,34 @@ const ConfirmAdoption = ({ navigation, route }) => {
             marginBottom: 60,
           }}
         >
-          {`conocer a tu mascota ideal `}
+          Encuesta del encuentro
         </Text>
 
         <Text
           style={{
-            fontSize: 18,
-            color: "#FFF",
+            fontSize: 22,
+            color: "black",
             marginTop: 10,
             alignSelf: "center",
             alignContent: "center",
-            marginBottom: 80,
+            marginBottom: 10,
           }}
         >
-          {`Es tiempo de conocerla `}
+          Recomendaciones
+        </Text>
+        <Text
+          style={{
+            marginBottom: 10,
+          }}
+        >
+          Puedes dirigirte a estos centros de asistencia y completar su cuidado{" "}
         </Text>
 
         <Button
           title="Adoptar"
           buttonStyle={styles.btnContainer}
           titleStyle={{ fontSize: 20 }}
+          onPress={() => navigation.navigate("Congrats")}
         />
       </View>
     </ScrollView>
