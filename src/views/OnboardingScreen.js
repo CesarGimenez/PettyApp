@@ -109,7 +109,7 @@ const OnboardingScreen = ({ navigation }) => (
         backgroundColor: "#F4F2F9",
         image: (
           <Image
-            source={require("../../assets/welcome2.png")}
+            source={require("../../assets/welcome4.png")}
             style={styles.image}
           />
         ),
