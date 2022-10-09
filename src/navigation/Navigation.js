@@ -1,11 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Icon } from "react-native-elements";
 import React from "react";
-import { Veterinary, Calendar } from "../screens";
+import { Calendar } from "../screens";
 import { AccountStack } from "./AccountStack";
-import { screen } from "../utils";
-import { ShelterStack } from "./ShelterStack";
-import Search from "../screens/Search";
 import { SearchStack } from "./SearchStack";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
@@ -14,7 +10,6 @@ const Tab = createBottomTabNavigator();
 
 const Navigation = ({ route }) => {
   const navigation = useNavigation();
-  console.log(route);
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -58,7 +53,7 @@ const IconOptions = (route, color, size) => {
     iconName = "clock-o";
   }
 
-/*   if (route?.name === "Veterinario") {
+  /*   if (route?.name === "Veterinario") {
     iconName = "medical-bag";
   }
 
@@ -70,9 +65,7 @@ const IconOptions = (route, color, size) => {
     iconName = "paw";
   }
 
-  return (
-    <FontAwesome name={iconName} size={24}  color={color}/>
-  );
+  return <FontAwesome name={iconName} size={24} color={color} />;
 };
 
 export { Navigation };
