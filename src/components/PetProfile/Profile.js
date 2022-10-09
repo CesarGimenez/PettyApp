@@ -8,7 +8,7 @@ import {
   View,
   Image,
   Pressable,
-} from 'react-native'
+} from "react-native";
 
 import PropTypes from "prop-types";
 import { Ionicons } from "@expo/vector-icons";
@@ -151,35 +151,25 @@ class Product extends Component {
             <View style={styles.productRow}>{this.renderHealthDetails()}</View>
           </View>
         </ScrollView>
-        
-        <View>
-            <Pressable
+
+        <View style={{ top: 25, left: 10 }}>
+          <Pressable
             onPress={() => this.props.navigation.navigate("Search")}
-              style={[styles.buttonFooter2]}
-            >
-              <Ionicons
-                name={"close-sharp"}
-                size={40}
-                color={"#9B8ACA"}
-              />
-            </Pressable>
+            style={[styles.buttonFooter2]}
+          >
+            <Ionicons name={"close-sharp"} size={40} color={"#9B8ACA"} />
+          </Pressable>
 
-            <Pressable
-              onPress={() =>
-                auth.currentUser
-                  ? this.props.navigation.navigate("Calendar")
-                  : this.props.navigation.navigate("Login")
-              }
-              style={[styles.buttonFooter1]}
-            >
-              <Ionicons
-                name={"heart-circle"}
-                size={40}
-                color={"white"}
-              />
-            </Pressable>
-
-          
+          <Pressable
+            onPress={() =>
+              auth.currentUser
+                ? this.props.navigation.navigate("Calendar")
+                : this.props.navigation.navigate("Login")
+            }
+            style={[styles.buttonFooter1]}
+          >
+            <Ionicons name={"heart-circle"} size={40} color={"white"} />
+          </Pressable>
         </View>
       </View>
     );
