@@ -63,7 +63,7 @@
       weight: 3,
       gender: 'F',
       photos: [
-        "https://perro.shop/wp-content/uploads/Welsh_Corgi_Pembroke_cachorros.jpg",
+        "https://www.kennelclubargentino.org.ar/wp-content/uploads/2020/01/corgi-cachorro1.jpg",
       ],
       favorite: true,
       description: 'Educado en las mejores escuelas para perros',
@@ -81,7 +81,7 @@
       age: "Cachorro",
       age2: "1 año",
       photos: [
-        "https://comoeducarauncachorro.com/blog/wp-content/uploads/p-2-805x452.jpg",
+        "https://www.perrospug.net/wp-content/uploads/2014/05/pugs.png",
       ],
       favorite: true,
       description: 'Le gusta bañarse escuchando música',
