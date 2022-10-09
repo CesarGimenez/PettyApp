@@ -11,6 +11,7 @@
         "https://www.petdarling.com/wp-content/uploads/2021/01/cachorros.jpg",
       ],
       favorite: true,
+      description: 'Educado en las mejores escuelas para perros'
     },
     {
       id: "4453fd343",
@@ -25,6 +26,7 @@
   
       ],
       favorite: true,
+      description: 'Sparky lleva en el refugio desde su nacimiento, le gusta jugar con medias'
     },
     {
       id: "2afomeoivi447852u",
@@ -38,6 +40,7 @@
         "https://i.pinimg.com/474x/8a/09/53/8a095362a69abf43e61a484965d74df8.jpg",
       ],
       favorite: true,
+      description: 'Una cachorrita muy fuerte y juguetona'
     },
     {
       id: "2afomeogdijjnu",
@@ -51,6 +54,7 @@
         "https://www.sopitas.com/wp-content/uploads/2022/02/perritos-duelo-resienten-perdida-estudio-universidad-milan-federica-pirrone-1.jpg?w=1120",
       ],
       favorite: true,
+      description: 'Educado en las mejores escuelas para perros'
     },
     {
       id: "2afomeoias45oe47852u",
@@ -64,6 +68,7 @@
         "https://comoeducarauncachorro.com/blog/wp-content/uploads/p-2-805x452.jpg",
       ],
       favorite: true,
+      description: 'Le gusta bañarse escuchando música'
     },
   
   ];

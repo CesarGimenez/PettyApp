@@ -57,7 +57,7 @@ class Profile extends Component {
       <View>
         <Text style={styles.detailText}>Caracteristicas</Text>
         <Text style={styles.subDetailText}>
-          Educado en la mejor escuela de perros
+        {this.props.description}
         </Text>
       </View>
     );
