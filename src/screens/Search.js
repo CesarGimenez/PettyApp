@@ -8,7 +8,7 @@ import pettyData from "../../pettyData.json"
 
 const styles = StyleSheet.create({
   barContainer: { flexDirection: "row", justifyContent: 'center', alignItems: 'center'},
-  searchContainer: {backgroundColor: 'white'},
+  searchContainer: {backgroundColor: '#F9F8FD'},
   listContainer: {
     marginTop: StatusBar.currentHeight || 0,
     marginBottom: 200
