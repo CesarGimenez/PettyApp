@@ -47,12 +47,11 @@ import {
     const { navigate } = navigation;
 
     const handleFavoriteItemClicked = () => {
-      setFavoriteItem(!favoriteItem);
+      setFavoriteItem(favorite);
       console.log("make some backend request");
       navigate('PetProfile')
     };
-
-    
+   
   
     return (
       <View style={[styles.cardContainer, style]} {...rest}>
