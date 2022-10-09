@@ -13,8 +13,6 @@ import {
 import PropTypes from "prop-types";
 import { Ionicons } from "@expo/vector-icons";
 
-import petData from "./petData.json";
-
 import PhotoButton from "./PhotoButton";
 import PetStyle from "./PetStyle";
 import { getAuth } from "firebase/auth";
@@ -23,7 +21,7 @@ const styles = StyleSheet.create({ ...PetStyle });
 
 const auth = getAuth();
 
-class Product extends Component {
+class Profile extends Component {
   static propTypes = {
     img: PropTypes.string.isRequired,
     detail: PropTypes.string.isRequired,
@@ -33,6 +31,7 @@ class Product extends Component {
   static defaultProps = {
     containerStyle: {},
   };
+  
   renderDetail = () => {
     return (
       <View style={{ flexDirection: "row" }}>
@@ -116,7 +115,7 @@ class Product extends Component {
       <View style={styles.headerContainer}>
         <View style={styles.coverContainer}>
           <ImageBackground
-            source={{ uri: this.props.img }}
+            source={{ uri: this.props.photos[0] }}
             style={styles.coverImage}
           >
             <PhotoButton />
@@ -144,11 +143,11 @@ class Product extends Component {
               borderRadius: 20,
             }}
           >
-            <View style={styles.productRow}>{this.renderNavigator()}</View>
-            <View style={styles.productRow}>{this.renderDetail()}</View>
-            <View style={styles.productRow}>{this.renderAddress()}</View>
-            <View style={styles.productRow}>{this.renderDescription()}</View>
-            <View style={styles.productRow}>{this.renderHealthDetails()}</View>
+            <View style={styles.ProfileRow}>{this.renderNavigator()}</View>
+            <View style={styles.ProfileRow}>{this.renderDetail()}</View>
+            <View style={styles.ProfileRow}>{this.renderAddress()}</View>
+            <View style={styles.ProfileRow}>{this.renderDescription()}</View>
+            <View style={styles.ProfileRow}>{this.renderHealthDetails()}</View>
           </View>
         </ScrollView>
 
@@ -176,4 +175,4 @@ class Product extends Component {
   }
 }
 
-export default Product;
+export default Profile;
