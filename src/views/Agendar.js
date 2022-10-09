@@ -43,12 +43,11 @@ const Agendar = ({ navigation }) => {
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
                 setModalVisible(!modalVisible);
-                //go to mis encuentros
               }}
             >
               <Text
                 style={styles.textStyle}
-                onPress={() => navigation.navigate("Calendar")}
+                onPress={() => navigation.navigate("AgendarDone")}
               >
                 Confirmar
               </Text>

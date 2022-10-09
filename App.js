@@ -5,6 +5,7 @@ import { enableScreens } from "react-native-screens";
 import { initFirebase } from "./src/utils/firebase";
 import OnboardingScreen from "./src/views/OnboardingScreen";
 import Agendar from "./src/views/Agendar";
+import AgendarDone from "./src/views/AgendarDone";
 import Login from "./src/screens/Login";
 import SignIn from "./src/screens/SignIn";
 import SignUp from "./src/screens/SignUp";
@@ -58,6 +59,11 @@ export default function App() {
         <Stack.Screen
           name="Agendar"
           component={Agendar}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="AgendarDone"
+          component={AgendarDone}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
