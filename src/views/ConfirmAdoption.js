@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, StyleSheet, Image } from "react-native";
 import React from "react";
 import { Button, Icon } from "react-native-elements";
-import { getAuth } from "firebase/auth";
+import { getAuth, updatePhoneNumber } from "firebase/auth";
 import petData from "../../pettyData.json";
 
 const styles = StyleSheet.create({
@@ -132,6 +132,9 @@ const ConfirmAdoption = ({ navigation, route }) => {
   const id = route?.params?.id;
   const petFilter = petData.filter((pet) => pet.id == id);
   const pet = petFilter[0];
+  const confirmAdoption = () => {
+    navigation.navigate("Congrats");
+  };
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -222,7 +225,7 @@ const ConfirmAdoption = ({ navigation, route }) => {
           title="Adoptar"
           buttonStyle={styles.btnContainer}
           titleStyle={{ fontSize: 20 }}
-          onPress={() => navigation.navigate("Congrats")}
+          onPress={() => confirmAdoption()}
         />
       </View>
     </ScrollView>

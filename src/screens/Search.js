@@ -22,10 +22,8 @@ const styles = StyleSheet.create({
 const properties = pettyData;
 
 const Search = ({ navigation }) => {
-  const handleLogout = async () => {
-    const auth = getAuth();
-    await signOut(auth);
-  };
+  const auth = getAuth();
+  console.log(auth.currentUser);
   return (
     /*     <ScrollView
       showsVerticalScrollIndicator={false}
