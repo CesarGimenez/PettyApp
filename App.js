@@ -70,10 +70,11 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-<<<<<<< HEAD
           name="Calendar"
           component={Calendar}
-=======
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="Confirm"
           component={ConfirmAdoption}
           options={{ headerShown: false }}
@@ -81,7 +82,6 @@ export default function App() {
         <Stack.Screen
           name="Congrats"
           component={Congrats}
->>>>>>> dev-cesar
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
