@@ -18,6 +18,8 @@ export default {
   headerContainer: {
     alignItems: 'center',
     backgroundColor: '#F4F2F9',
+    borderBottomLeftRadius: 35,
+    borderBottomRightRadius: 35,
   },
   scroll: {
     backgroundColor: '#F4F2F9',
@@ -86,7 +88,7 @@ export default {
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#E3DDEB',
+    borderColor: '#F4F2F9',
     borderRadius: 10,
     padding: 4,
     marginTop: 20,
@@ -138,6 +140,7 @@ export default {
     color: "#3C3C43",
     fontSize: 18,
     fontWeight: '600',
+    marginTop: 10
   },
   detailText2: {
     color: "#3C3C43",
@@ -168,8 +171,13 @@ export default {
     alignItems: 'center',
     backgroundColor: 'white',
     borderRadius: 25,
+    borderWidth: 1,
+    borderColor: "#F4F2F9",
     padding: 5,
-    margin: 15,
+    marginTop: 25,
+    marginRight: 15,
+    marginLeft: 15,
+    marginBottom: 15,
     height: 85,
   },
   healthTextTittle: {

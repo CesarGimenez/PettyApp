@@ -143,9 +143,10 @@ class Profile extends Component {
             style={{
               paddingLeft: 5,
               paddingRight: 3,
-              backgroundColor: "#FFF",
+              backgroundColor: "#F9F8FD",
               top: -15,
               borderRadius: 20,
+              height: 400
             }}
           >
             <View style={styles.ProfileRow}>{this.renderNavigator()}</View>
