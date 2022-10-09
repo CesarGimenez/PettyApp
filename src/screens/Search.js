@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TextInput, Button, Image, FlatList, StyleSheet} from "react-native";
+import { View, Text, ScrollView, TextInput, Button, Image, FlatList, StyleSheet, StatusBar} from "react-native";
 import { SearchBar } from "react-native-elements";
 import { getAuth, signOut } from "firebase/auth";
 import React from "react";
@@ -6,7 +6,11 @@ import Card from "../components/Card/Card";
 
 const styles = StyleSheet.create({
   barContainer: { flexDirection: "row", justifyContent: 'center', alignItems: 'center'},
-  searchContainer: {backgroundColor: 'white'}
+  searchContainer: {backgroundColor: 'white'},
+  listContainer: {
+    marginTop: StatusBar.currentHeight || 0,
+    marginBottom: 200
+  },
 
 })
 
@@ -117,6 +121,7 @@ const Search = ({navigation}) => {
         />
       
        <FlatList
+        style={styles.listContainer}
         data={properties}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
@@ -140,5 +145,6 @@ const Search = ({navigation}) => {
     </View>
   );
 };
+
 
 export default Search;
