@@ -80,7 +80,7 @@ function getMenuOptions(selectedComponent, Navigate) {
       iconColorLeft: "#9B8ACA",
       iconNameRight: "chevron-right",
       iconColorRight: "#ccc",
-      onPress: () => selectedComponent("displayName"),
+      onPress: () => Navigate("Mis encuentros"),
     },
     {
       title: "Mis mascotas",
@@ -98,7 +98,7 @@ function getMenuOptions(selectedComponent, Navigate) {
       iconColorLeft: "#9B8ACA",
       iconNameRight: "chevron-right",
       iconColorRight: "#ccc",
-      onPress: () => selectedComponent("displayName"),
+      onPress: () => selectedComponent(""),
     },
     {
       title: "Invitar amigos",
@@ -107,7 +107,7 @@ function getMenuOptions(selectedComponent, Navigate) {
       iconColorLeft: "#9B8ACA",
       iconNameRight: "chevron-right",
       iconColorRight: "#ccc",
-      onPress: () => selectedComponent("displayName"),
+      onPress: () => selectedComponent(""),
     },
     {
       title: "Ayuda",
@@ -116,7 +116,7 @@ function getMenuOptions(selectedComponent, Navigate) {
       iconColorLeft: "#9B8ACA",
       iconNameRight: "chevron-right",
       iconColorRight: "#ccc",
-      onPress: () => selectedComponent("displayName"),
+      onPress: () => selectedComponent(""),
     },
     {
       title: "Cambiar Nombre y Apellidos",

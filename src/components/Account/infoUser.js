@@ -12,7 +12,6 @@ export function InfoUser(props) {
   const { currentUser } = auth;
   //   const { uid, photoURL, displayName, email } = getAuth()?.currentUser;
   const [avatar, setAvatar] = useState(currentUser?.photoURL);
-  console.log(currentUser.photoURL);
   const changeAvatar = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,

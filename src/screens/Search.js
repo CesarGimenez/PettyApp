@@ -1,8 +1,15 @@
-import { View, Text, ScrollView, TextInput, Button, Image, FlatList, StyleSheet, StatusBar} from "react-native";
+import { View, FlatList, StyleSheet, StatusBar } from "react-native";
 import { SearchBar } from "react-native-elements";
 import { getAuth, signOut } from "firebase/auth";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../components/Card/Card";
+import {
+  collection,
+  getFirestore,
+  onSnapshot,
+  orderBy,
+  query,
+} from "firebase/firestore";
 
 import pettyData from "../../pettyData.json"
 
@@ -11,20 +18,33 @@ const styles = StyleSheet.create({
   searchContainer: {backgroundColor: '#F9F8FD'},
   listContainer: {
     marginTop: StatusBar.currentHeight || 0,
-    marginBottom: 200
+    marginBottom: 200,
   },
-
-})
+});
 
 const properties = pettyData
 
-const Search = ({navigation}) => {
+const Search = ({ navigation }) => {
+  const [pets, setPets] = useState(null);
+  const db = getFirestore();
   const handleLogout = async () => {
     const auth = getAuth();
     await signOut(auth);
   };
+
+  useEffect(() => {
+    const q = query(collection(db, "pets"), orderBy("createdAt", "desc"));
+
+    onSnapshot(q, (snapshot) => {
+      setPets(snapshot.docs);
+    });
+  }, []);
+  const listPets = pets?.map(
+    (item) => item?._document?.data?.value?.mapValue?.fields
+  );
+  console.log(listPets);
   return (
-/*     <ScrollView
+    /*     <ScrollView
       showsVerticalScrollIndicator={false}
       style={{
         height: 100,
@@ -35,36 +55,30 @@ const Search = ({navigation}) => {
       <Button onPress={handleLogout} title="logout"></Button>
     </ScrollView> */
 
-
-    <View style={styles.searchContainer}>       
-     
-
+    <View style={styles.searchContainer}>
       <SearchBar
-          placeholder="Buscar"
-          lightTheme
-          round
-          onChangeText={() => console.log('Holi')}
-          autoCorrect={false}
-          searchIcon={{ size: 20 }}
-          onClear={() => console.log('Bye')}
-          
-          containerStyle={{
-            backgroundColor: 'white',
-          }}
-          
-          inputContainerStyle={{
-            backgroundColor: 'white',
-            alignItems: 'center',
-          }}
-          
-          style={{
-            borderRadius: 15,
-            backgroundColor:'white', 
-            padding:8,          
-          }}
-        />
-      
-       <FlatList
+        placeholder="Buscar"
+        lightTheme
+        round
+        onChangeText={() => console.log("Holi")}
+        autoCorrect={false}
+        searchIcon={{ size: 20 }}
+        onClear={() => console.log("Bye")}
+        containerStyle={{
+          backgroundColor: "white",
+        }}
+        inputContainerStyle={{
+          backgroundColor: "white",
+          alignItems: "center",
+        }}
+        style={{
+          borderRadius: 15,
+          backgroundColor: "white",
+          padding: 8,
+        }}
+      />
+
+      <FlatList
         style={styles.listContainer}
         data={properties}
         keyExtractor={(item) => item.id}
@@ -79,9 +93,7 @@ const Search = ({navigation}) => {
             favorite={item.favorite}
             id={item.id}
             onPress={() =>
-              console.log(
-                "search navigation " + JSON.stringify(item)
-              )
+              console.log("search navigation " + JSON.stringify(item))
             }
             navigation={navigation}
           />
@@ -90,6 +102,5 @@ const Search = ({navigation}) => {
     </View>
   );
 };
-
 
 export default Search;

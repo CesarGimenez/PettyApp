@@ -1,20 +1,16 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Icon } from "react-native-elements";
 import React from "react";
-import { Veterinary, Calendar } from "../screens";
+import { Calendar } from "../screens";
 import { AccountStack } from "./AccountStack";
-import { screen } from "../utils";
-import { ShelterStack } from "./ShelterStack";
-import Search from "../screens/Search";
 import { SearchStack } from "./SearchStack";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
+import { AddPetScreen } from "../screens/AddPet/AddPet";
 
 const Tab = createBottomTabNavigator();
 
 const Navigation = ({ route }) => {
   const navigation = useNavigation();
-  console.log(route);
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -39,9 +35,8 @@ const Navigation = ({ route }) => {
       })}
     >
       <Tab.Screen name="Buscar" component={SearchStack} />
-      {/* <Tab.Screen name="Veterinario" component={Veterinary} />
-      <Tab.Screen name="Refugios" component={ShelterStack} />  */}
-      <Tab.Screen name="Calendar" component={Calendar} />
+      {/* <Tab.Screen name="Crear Mascota" component={AddPetScreen} /> */}
+      <Tab.Screen name="Mis encuentros" component={Calendar} />
       <Tab.Screen name="Cuenta" component={AccountStack} />
     </Tab.Navigator>
   );
@@ -54,11 +49,11 @@ const IconOptions = (route, color, size) => {
     iconName = "user";
   }
 
-  if (route?.name === "Calendar") {
+  if (route?.name === "Mis encuentros") {
     iconName = "clock-o";
   }
 
-/*   if (route?.name === "Veterinario") {
+  /*   if (route?.name === "Veterinario") {
     iconName = "medical-bag";
   }
 
@@ -70,9 +65,7 @@ const IconOptions = (route, color, size) => {
     iconName = "paw";
   }
 
-  return (
-    <FontAwesome name={iconName} size={24}  color={color}/>
-  );
+  return <FontAwesome name={iconName} size={24} color={color} />;
 };
 
 export { Navigation };

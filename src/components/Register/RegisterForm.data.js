@@ -13,7 +13,9 @@ export function validationSchema() {
     email: Yup.string()
       .email("El email no es correcto")
       .required("El email es obligatorio"),
-    password: Yup.string().required("La contraseña es obligatoria"),
+    password: Yup.string()
+      .required("La contraseña es obligatoria")
+      .min(6, "El password debe tener como minimo 6 caracteres"),
     repeatPassword: Yup.string()
       .required("La contraseña es obligatoria")
       .oneOf([Yup.ref("password")], "Las contraseñas tienen que ser iguales"),

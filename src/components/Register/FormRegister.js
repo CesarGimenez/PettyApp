@@ -26,6 +26,7 @@ export default function RegisterForm() {
         );
         navigation.navigate("Navigation");
       } catch (error) {
+        console.log(error);
         Toast.show({
           type: "error",
           position: "bottom",
