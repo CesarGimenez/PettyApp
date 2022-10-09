@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { Input, Icon, Button } from "react-native-elements";
 import { useFormik } from "formik";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -61,12 +61,54 @@ export function LoginForm() {
         errorMessage={formik.errors.password}
       />
       <Button
-        title="Iniciar sesión"
+        title="Sign In"
         containerStyle={styles.btnContainer}
         buttonStyle={styles.btn}
+        titleStyle={{ fontSize: 20 }}
         onPress={formik.handleSubmit}
         loading={formik.isSubmitting}
       />
+      <View
+        style={{
+          flexDirection: "row",
+          padding: 50,
+        }}
+      >
+        <View
+          style={{
+            marginRight: 20,
+            backgroundColor: "#9B8ACA",
+            borderRadius: 50,
+            padding: 5,
+          }}
+        >
+          <TouchableOpacity>
+            <Icon
+              type="material-community"
+              name="google"
+              color="#FFF"
+              size={35}
+            ></Icon>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            marginLeft: 20,
+            padding: 5,
+            backgroundColor: "#9B8ACA",
+            borderRadius: 50,
+          }}
+        >
+          <TouchableOpacity>
+            <Icon
+              type="material-community"
+              name="facebook"
+              color="#FFF"
+              size={35}
+            ></Icon>
+          </TouchableOpacity>
+        </View>
+      </View>
       <View style={{ marginTop: 20, alignSelf: "center" }}>
         <Text style={{ color: "#6852A5", fontSize: 18 }}>
           No posees una cuenta?{" "}

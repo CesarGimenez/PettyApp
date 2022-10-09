@@ -79,9 +79,10 @@ export default function RegisterForm() {
         errorMessage={formik.errors.repeatPassword}
       />
       <Button
-        title="Unirse"
+        title="Sign Up"
         containerStyle={styles.btnContainer}
         buttonStyle={styles.btn}
+        titleStyle={{ fontSize: 20 }}
         onPress={formik.handleSubmit}
         loading={formik.isSubmitting}
       />

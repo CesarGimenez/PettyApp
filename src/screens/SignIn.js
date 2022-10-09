@@ -22,13 +22,13 @@ const SignIn = ({ navigation }) => {
             fontSize: 35,
             color: "#FFF",
             paddingVertical: 25,
+            fontWeight: "700",
           }}
         >
           Sign In
         </Text>
         <View
           style={{
-            paddingTop: 50,
             backgroundColor: "#FFF",
             borderRadius: 20,
             height: 500,

@@ -2,6 +2,7 @@ import { View, Text, ScrollView, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { styles } from "./Styles";
+import { Icon } from "react-native-elements";
 
 const Login = ({ navigation }) => {
   const goToRegister = () => {
@@ -54,8 +55,11 @@ const Login = ({ navigation }) => {
             paddingTop: 50,
           }}
         >
-          <Text style={styles.btnRegister1} onPress={goToRegister}>
-            Regístrar con email
+          <Text
+            style={styles.btnRegister1}
+            onPress={() => navigation.navigate("SignIn")}
+          >
+            Continuar con email
           </Text>
         </View>
         <View style={{ padding: 20, alignSelf: "center", marginTop: 10 }}>
