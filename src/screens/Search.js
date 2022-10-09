@@ -3,13 +3,8 @@ import { SearchBar } from "react-native-elements";
 import { getAuth, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card/Card";
-import {
-  collection,
-  getFirestore,
-  onSnapshot,
-  orderBy,
-  query,
-} from "firebase/firestore";
+
+import pettyData from "../../pettyData.json";
 
 const styles = StyleSheet.create({
   barContainer: {
@@ -24,83 +19,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const properties = [
-  {
-    id: "24reaf6r8er7852u",
-    name: "Petty",
-    breed: "Cruzado",
-    age: "Cachorro",
-    gender: "M",
-    photos: [
-      "https://www.petdarling.com/wp-content/uploads/2021/01/cachorros.jpg",
-    ],
-    favorite: true,
-  },
-  {
-    id: "4453fd343",
-    name: "Sparky",
-    breed: "Corgi",
-    age: "Cachorro",
-    gender: "M",
-    photos: [
-      "https://www.elespectador.com/resizer/ti2d1pExzZSzsImY9C3o2NDpKwM=/920x613/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/IWAGH4BFVVEWDEC22MN3PC6ARM.jpg",
-    ],
-    favorite: true,
-  },
-  {
-    id: "2afomeoivi447852u",
-    name: "Luna",
-    breed: "Shi Tzu",
-    age: "Cachorro",
-    gender: "F",
-    photos: [
-      "https://i.pinimg.com/474x/8a/09/53/8a095362a69abf43e61a484965d74df8.jpg",
-    ],
-    favorite: true,
-  },
-  {
-    id: "2afomeogdijjnu",
-    name: "Ponky",
-    breed: "Cruzado",
-    age: "Adulto",
-    gender: "F",
-    photos: [
-      "https://www.sopitas.com/wp-content/uploads/2022/02/perritos-duelo-resienten-perdida-estudio-universidad-milan-federica-pirrone-1.jpg?w=1120",
-    ],
-    favorite: true,
-  },
-  {
-    id: "2afomeoias45oe47852u",
-    name: "Sam",
-    breed: "breed",
-    gender: "M",
-    age: "Cachorro",
-    photos: [
-      "https://comoeducarauncachorro.com/blog/wp-content/uploads/p-2-805x452.jpg",
-    ],
-    favorite: true,
-  },
-];
+const properties = pettyData;
 
 const Search = ({ navigation }) => {
-  const [pets, setPets] = useState(null);
-  const db = getFirestore();
   const handleLogout = async () => {
     const auth = getAuth();
     await signOut(auth);
   };
-
-  useEffect(() => {
-    const q = query(collection(db, "pets"), orderBy("createdAt", "desc"));
-
-    onSnapshot(q, (snapshot) => {
-      setPets(snapshot.docs);
-    });
-  }, []);
-  const listPets = pets?.map(
-    (item) => item?._document?.data?.value?.mapValue?.fields
-  );
-  console.log(listPets);
   return (
     /*     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -149,6 +74,7 @@ const Search = ({ navigation }) => {
             age={item.age}
             gender={item.gender}
             favorite={item.favorite}
+            id={item.id}
             onPress={() =>
               console.log("search navigation " + JSON.stringify(item))
             }

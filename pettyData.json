@@ -1,0 +1,79 @@
+[
+    {
+      id: "24reaf6r8er7852u",
+      name: "Petty",
+      breed: "Cruzado",
+      age: "Cachorro",
+      age2: "2 meses",
+      weight: 2,
+      gender: 'M',
+      photos: [
+        "https://www.petdarling.com/wp-content/uploads/2021/01/cachorros.jpg",
+      ],
+      favorite: true,
+      description: 'Educado en las mejores escuelas para perros',
+      address: 'Altamira, Caracas'
+    },
+    {
+      id: "4453fd343",
+      name: "Sparky",
+      breed: "Corgi",
+      age: "Cachorro",
+      age2: "1 año",
+      weight: 4,
+      gender: 'M',
+      photos: [
+        "https://www.elespectador.com/resizer/ti2d1pExzZSzsImY9C3o2NDpKwM=/920x613/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/IWAGH4BFVVEWDEC22MN3PC6ARM.jpg",
+  
+      ],
+      favorite: true,
+      description: 'Sparky lleva en el refugio desde su nacimiento, le gusta jugar con medias',
+      address: 'Refugio Amor de Mascotas, Chacaito, Caracas'
+    },
+    {
+      id: "2afomeoivi447852u",
+      name: "Luna",
+      breed: "Shi Tzu",
+      age: "Cachorro",
+      age2: "11 meses",
+      gender: 'F',
+      weight: 2,
+      photos: [
+        "https://i.pinimg.com/474x/8a/09/53/8a095362a69abf43e61a484965d74df8.jpg",
+      ],
+      favorite: true,
+      description: 'Una cachorrita muy fuerte y juguetona',
+      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas'
+    },
+    {
+      id: "2afomeogdijjnu",
+      name: "Ponky",
+      breed: "Cruzado",
+      age: "Adulto",
+      age2: "3 años",
+      weight: 3,
+      gender: 'F',
+      photos: [
+        "https://www.sopitas.com/wp-content/uploads/2022/02/perritos-duelo-resienten-perdida-estudio-universidad-milan-federica-pirrone-1.jpg?w=1120",
+      ],
+      favorite: true,
+      description: 'Educado en las mejores escuelas para perros',
+      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas'
+    },
+    {
+      id: "2afomeoias45oe47852u",
+      name: "Sam",
+      breed: "Xjkdf",
+      gender: 'M',
+      weight: 5,
+      age: "Cachorro",
+      age2: "1 año",
+      photos: [
+        "https://comoeducarauncachorro.com/blog/wp-content/uploads/p-2-805x452.jpg",
+      ],
+      favorite: true,
+      description: 'Le gusta bañarse escuchando música',
+      address: 'Sabana Grande Caracas'
+    },
+  
+  ];

@@ -13,11 +13,18 @@ import CalendarPicker from "react-native-calendar-picker";
 import React, { useState } from "react";
 
 import agendarStyle from "./agendarStyles";
+import { getAuth } from "firebase/auth";
+import petData from "../../pettyData.json";
 
 const styles = StyleSheet.create({ ...agendarStyle });
 
-const Agendar = ({ navigation }) => {
+const Agendar = ({ navigation, route }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const auth = getAuth();
+  const { currentUser } = auth;
+  const id = route.params.id;
+  const petFilter = petData.filter((pet) => pet.id == id);
+  const pet = petFilter[0];
 
   return (
     <ScrollView
@@ -47,7 +54,7 @@ const Agendar = ({ navigation }) => {
             >
               <Text
                 style={styles.textStyle}
-                onPress={() => navigation.navigate("AgendarDone")}
+                onPress={() => navigation.navigate("AgendarDone", { id: id })}
               >
                 Confirmar
               </Text>
@@ -62,19 +69,19 @@ const Agendar = ({ navigation }) => {
           paddingTop: 50,
         }}
       >
-        <Image style={styles.circleStyle} source={{ uri: "" }} />
+        <Image style={styles.circleStyle} />
 
         <Image
           style={styles.pic1Style}
           source={{
-            uri: "https://us.123rf.com/450wm/olyamax/olyamax2006/olyamax200600018/149899027-perrito-divertido-asoma-la-nariz-a-la-c%C3%A1mara-lindo-perro-perdiguero-de-seis-semanas-de-edad-mirando-.jpg?ver=6",
+            uri: pet.photos[0],
           }}
         />
 
         <Image
           style={styles.pic2Style}
           source={{
-            uri: "https://img.freepik.com/foto-gratis/retrato-joven-sonriente-gafas_171337-4842.jpg?w=2000",
+            uri: currentUser.photoURL,
           }}
         />
 

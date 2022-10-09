@@ -13,8 +13,6 @@ import {
 import PropTypes from "prop-types";
 import { Ionicons } from "@expo/vector-icons";
 
-import petData from "./petData.json";
-
 import PhotoButton from "./PhotoButton";
 import PetStyle from "./PetStyle";
 import { getAuth } from "firebase/auth";
@@ -23,21 +21,24 @@ const styles = StyleSheet.create({ ...PetStyle });
 
 const auth = getAuth();
 
-class Product extends Component {
+class Profile extends Component {
   static propTypes = {
-    img: PropTypes.string.isRequired,
-    detail: PropTypes.string.isRequired,
+    img: PropTypes.string,
+    detail: PropTypes.string,
     containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
   };
 
   static defaultProps = {
     containerStyle: {},
   };
+
   renderDetail = () => {
     return (
       <View style={{ flexDirection: "row" }}>
-        <Text style={[styles.detailText, { flex: 2 }]}>Mario</Text>
-        <Text style={[styles.detailText2, { flex: 0 }]}>Cruzado</Text>
+        <Text style={[styles.detailText, { flex: 2 }]}>{this.props.name}</Text>
+        <Text style={[styles.detailText2, { flex: 0 }]}>
+          {this.props.breed}
+        </Text>
       </View>
     );
   };
@@ -47,7 +48,7 @@ class Product extends Component {
       <View>
         <Text style={[styles.detailText3]}>
           <Ionicons name={"location-outline"} size={20} />
-          Altamira, Caracas
+          {this.props.address}
         </Text>
       </View>
     );
@@ -57,9 +58,7 @@ class Product extends Component {
     return (
       <View>
         <Text style={styles.detailText}>Caracteristicas</Text>
-        <Text style={styles.subDetailText}>
-          Educado en la mejor escuela de perros
-        </Text>
+        <Text style={styles.subDetailText}>{this.props.description}</Text>
       </View>
     );
   };
@@ -97,15 +96,17 @@ class Product extends Component {
       <View style={{ flexDirection: "row" }}>
         <View style={[styles.navigatorButton, { flex: 2 }]}>
           <Text style={styles.navigatorTextTittle}>Edad</Text>
-          <Text style={styles.navigatorTextSubTittle}>7 meses</Text>
+          <Text style={styles.navigatorTextSubTittle}>{this.props.age2}</Text>
         </View>
         <View style={[styles.navigatorButton, { flex: 2 }]}>
           <Text style={styles.navigatorTextTittle}>Peso</Text>
-          <Text style={styles.navigatorTextSubTittle}>2kg</Text>
+          <Text style={styles.navigatorTextSubTittle}>
+            {this.props.weight} kg
+          </Text>
         </View>
         <View style={[styles.navigatorButton, { flex: 2 }]}>
           <Text style={styles.navigatorTextTittle}>Genero</Text>
-          <Text style={styles.navigatorTextSubTittle}>Macho</Text>
+          <Text style={styles.navigatorTextSubTittle}>{this.props.gender}</Text>
         </View>
       </View>
     );
@@ -116,7 +117,7 @@ class Product extends Component {
       <View style={styles.headerContainer}>
         <View style={styles.coverContainer}>
           <ImageBackground
-            source={{ uri: this.props.img }}
+            source={{ uri: this.props.photos[0] }}
             style={styles.coverImage}
           >
             <PhotoButton />
@@ -144,11 +145,11 @@ class Product extends Component {
               borderRadius: 20,
             }}
           >
-            <View style={styles.productRow}>{this.renderNavigator()}</View>
-            <View style={styles.productRow}>{this.renderDetail()}</View>
-            <View style={styles.productRow}>{this.renderAddress()}</View>
-            <View style={styles.productRow}>{this.renderDescription()}</View>
-            <View style={styles.productRow}>{this.renderHealthDetails()}</View>
+            <View style={styles.ProfileRow}>{this.renderNavigator()}</View>
+            <View style={styles.ProfileRow}>{this.renderDetail()}</View>
+            <View style={styles.ProfileRow}>{this.renderAddress()}</View>
+            <View style={styles.ProfileRow}>{this.renderDescription()}</View>
+            <View style={styles.ProfileRow}>{this.renderHealthDetails()}</View>
           </View>
         </ScrollView>
 
@@ -163,7 +164,9 @@ class Product extends Component {
           <Pressable
             onPress={() =>
               auth.currentUser
-                ? this.props.navigation.navigate("Agendar")
+                ? this.props.navigation.navigate("Agendar", {
+                    id: this.props.id,
+                  })
                 : this.props.navigation.navigate("Login")
             }
             style={[styles.buttonFooter1]}
@@ -176,4 +179,4 @@ class Product extends Component {
   }
 }
 
-export default Product;
+export default Profile;

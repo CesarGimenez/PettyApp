@@ -21,6 +21,7 @@ import {
     age,
     gender,
     favorite,
+    id,
     onPress,
     style,
     navigation,
@@ -49,7 +50,7 @@ import {
     const handleFavoriteItemClicked = () => {
       setFavoriteItem(favorite);
       console.log("make some backend request");
-      navigate('PetProfile')
+      navigate('PetProfile', {id})
     };
    
   
