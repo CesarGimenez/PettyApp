@@ -12,7 +12,10 @@
       ],
       favorite: true,
       description: 'Educado en las mejores escuelas para perros',
-      address: 'Altamira, Caracas'
+      address: 'Altamira, Caracas',
+      vacunado: true,
+      castrado: true,
+      desparacitado: false
     },
     {
       id: "4453fd343",
@@ -28,7 +31,10 @@
       ],
       favorite: true,
       description: 'Sparky lleva en el refugio desde su nacimiento, le gusta jugar con medias',
-      address: 'Refugio Amor de Mascotas, Chacaito, Caracas'
+      address: 'Refugio Amor de Mascotas, Chacaito, Caracas',
+      vacunado: true,
+      castrado: true,
+      desparacitado: true
     },
     {
       id: "2afomeoivi447852u",
@@ -43,7 +49,10 @@
       ],
       favorite: true,
       description: 'Una cachorrita muy fuerte y juguetona',
-      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas'
+      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas',
+      vacunado: true,
+      castrado: true,
+      desparacitado: false
     },
     {
       id: "2afomeogdijjnu",
@@ -58,7 +67,10 @@
       ],
       favorite: true,
       description: 'Educado en las mejores escuelas para perros',
-      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas'
+      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas',
+      vacunado: false,
+      castrado: true,
+      desparacitado: false
     },
     {
       id: "2afomeoias45oe47852u",
@@ -73,7 +85,10 @@
       ],
       favorite: true,
       description: 'Le gusta bañarse escuchando música',
-      address: 'Sabana Grande Caracas'
+      address: 'Sabana Grande Caracas',
+      vacunado: true,
+      castrado: true,
+      desparacitado: false
     },
   
   ];
