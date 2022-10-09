@@ -35,8 +35,8 @@ class Profile extends Component {
   renderDetail = () => {
     return (
       <View style={{ flexDirection: "row" }}>
-        <Text style={[styles.detailText, { flex: 2 }]}>Mario</Text>
-        <Text style={[styles.detailText2, { flex: 0 }]}>Cruzado</Text>
+        <Text style={[styles.detailText, { flex: 2 }]}>{this.props.name}</Text>
+        <Text style={[styles.detailText2, { flex: 0 }]}>{this.props.breed}</Text>
       </View>
     );
   };
@@ -96,15 +96,15 @@ class Profile extends Component {
       <View style={{ flexDirection: "row" }}>
         <View style={[styles.navigatorButton, { flex: 2 }]}>
           <Text style={styles.navigatorTextTittle}>Edad</Text>
-          <Text style={styles.navigatorTextSubTittle}>7 meses</Text>
+          <Text style={styles.navigatorTextSubTittle}>{this.props.age2}</Text>
         </View>
         <View style={[styles.navigatorButton, { flex: 2 }]}>
           <Text style={styles.navigatorTextTittle}>Peso</Text>
-          <Text style={styles.navigatorTextSubTittle}>2kg</Text>
+          <Text style={styles.navigatorTextSubTittle}>{this.props.weight} kg</Text>
         </View>
         <View style={[styles.navigatorButton, { flex: 2 }]}>
           <Text style={styles.navigatorTextTittle}>Genero</Text>
-          <Text style={styles.navigatorTextSubTittle}>Macho</Text>
+          <Text style={styles.navigatorTextSubTittle}>{this.props.gender}</Text>
         </View>
       </View>
     );
