@@ -5,6 +5,7 @@ import { AccountStack } from "./AccountStack";
 import { SearchStack } from "./SearchStack";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
+import { AddPetScreen } from "../screens/AddPet/AddPet";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +35,7 @@ const Navigation = ({ route }) => {
       })}
     >
       <Tab.Screen name="Buscar" component={SearchStack} />
+      {/* <Tab.Screen name="Crear Mascota" component={AddPetScreen} /> */}
       <Tab.Screen name="Mis encuentros" component={Calendar} />
       <Tab.Screen name="Cuenta" component={AccountStack} />
     </Tab.Navigator>
