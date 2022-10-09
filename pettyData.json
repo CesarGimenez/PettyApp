@@ -45,7 +45,7 @@
       gender: 'F',
       weight: 2,
       photos: [
-        "https://i.pinimg.com/474x/8a/09/53/8a095362a69abf43e61a484965d74df8.jpg",
+        "https://www.elespectador.com/resizer/RHdl-f8tupZW6MBzHKjah_w4shg=/968x645/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/BMOUODGTDNDTHL3AXKHO2PAGVA.PNG",
       ],
       favorite: true,
       description: 'Una cachorrita muy fuerte y juguetona',
@@ -63,7 +63,7 @@
       weight: 3,
       gender: 'F',
       photos: [
-        "https://www.kennelclubargentino.org.ar/wp-content/uploads/2020/01/corgi-cachorro1.jpg",
+        "https://img.freepik.com/fotos-premium/cachorro-perro-abandonado_601298-571.jpg?w=2000",
       ],
       favorite: true,
       description: 'Educado en las mejores escuelas para perros',
@@ -81,7 +81,7 @@
       age: "Cachorro",
       age2: "1 año",
       photos: [
-        "https://www.perrospug.net/wp-content/uploads/2014/05/pugs.png",
+        "https://upload.wikimedia.org/wikipedia/commons/f/fe/My_pug.jpg",
       ],
       favorite: true,
       description: 'Le gusta bañarse escuchando música',
