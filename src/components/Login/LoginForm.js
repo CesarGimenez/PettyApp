@@ -5,16 +5,15 @@ import { useFormik } from "formik";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { initialValues, validationSchema } from "./LoginForm.data";
 import { styles } from "./LoginForm.styles";
-import { screen } from "../../utils";
-import SignIn from "../../screens/SignUp";
+import { useNavigation } from "@react-navigation/native";
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [errorLogged, setErrorLogged] = useState(false);
 
-  const onShowHidePassword = () => setShowPassword((prevState) => !prevState);
+  const navigation = useNavigation();
 
-  const redirect = () => {};
+  const onShowHidePassword = () => setShowPassword((prevState) => !prevState);
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -28,6 +27,7 @@ export function LoginForm() {
           formValue.email,
           formValue.password
         );
+        navigation.navigate("Navigation");
       } catch (error) {
         setErrorLogged(true);
       }
@@ -67,9 +67,19 @@ export function LoginForm() {
         onPress={formik.handleSubmit}
         loading={formik.isSubmitting}
       />
-      <Text>
-        No posees una cuenta? <Text onPress={() => redirect()}>Registrate</Text>
-      </Text>
+      <View style={{ marginTop: 20, alignSelf: "center" }}>
+        <Text style={{ color: "#6852A5", fontSize: 18 }}>
+          No posees una cuenta?{" "}
+          <Text
+            onPress={() => navigation.navigate("Register")}
+            style={{ color: "#8550A0" }}
+          >
+            {" "}
+            Registrate
+          </Text>
+        </Text>
+      </View>
+
       {errorLogged && <Text>Credenciales de usuario incorrectas</Text>}
     </View>
   );

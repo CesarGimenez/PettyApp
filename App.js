@@ -9,6 +9,7 @@ import SignIn from "./src/screens/SignIn";
 import SignUp from "./src/screens/SignUp";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { LogBox } from "react-native";
+import PetProfile from "./src/components/PetProfile/index";
 
 enableScreens();
 const Stack = createNativeStackNavigator();
@@ -41,6 +42,16 @@ export default function App() {
         <Stack.Screen
           name="Navigation"
           component={Navigation}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="PetProfile"
+          component={PetProfile}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name={"SignIn"}
+          component={SignIn}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
