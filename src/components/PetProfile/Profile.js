@@ -152,7 +152,7 @@ class Product extends Component {
           </View>
         </ScrollView>
 
-        <View style={{ top: 25, left: 10 }}>
+        <View>
           <Pressable
             onPress={() => this.props.navigation.navigate("Search")}
             style={[styles.buttonFooter2]}
@@ -163,7 +163,7 @@ class Product extends Component {
           <Pressable
             onPress={() =>
               auth.currentUser
-                ? this.props.navigation.navigate("Calendar")
+                ? this.props.navigation.navigate("Agendar")
                 : this.props.navigation.navigate("Login")
             }
             style={[styles.buttonFooter1]}
