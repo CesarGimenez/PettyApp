@@ -51,7 +51,7 @@ import {
             title="Ir a mis encuentros"
             buttonStyle={styles.btnContainer}
             titleStyle={{ fontSize: 20 }}
-            onPress={() => navigation.navigate("Calendar")}
+            onPress={() => navigation.navigate("Mis encuentros")}
           />
         </View>
       </ScrollView>
