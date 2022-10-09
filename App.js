@@ -4,6 +4,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { enableScreens } from "react-native-screens";
 import { initFirebase } from "./src/utils/firebase";
 import OnboardingScreen from "./src/views/OnboardingScreen";
+import Agendar from "./src/views/Agendar";
 import Login from "./src/screens/Login";
 import SignIn from "./src/screens/SignIn";
 import SignUp from "./src/screens/SignUp";
@@ -52,6 +53,11 @@ export default function App() {
         <Stack.Screen
           name={"SignIn"}
           component={SignIn}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Agendar"
+          component={Agendar}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

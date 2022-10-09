@@ -154,7 +154,7 @@ class Product extends Component {
         
         <View>
             <Pressable
-            onPress={() => this.props.navigation.navigate("Search")}
+              onPress={() => this.props.navigation.navigate("Search")}
               style={[styles.buttonFooter2]}
             >
               <Ionicons
@@ -165,9 +165,9 @@ class Product extends Component {
             </Pressable>
 
             <Pressable
-              onPress={() =>
+                onPress={() =>
                 auth.currentUser
-                  ? this.props.navigation.navigate("Calendar")
+                  ? this.props.navigation.navigate("Agendar")
                   : this.props.navigation.navigate("Login")
               }
               style={[styles.buttonFooter1]}
