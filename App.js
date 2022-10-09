@@ -8,9 +8,12 @@ import Login from "./src/screens/Login";
 import SignIn from "./src/screens/SignIn";
 import SignUp from "./src/screens/SignUp";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { LogBox } from "react-native";
 
 enableScreens();
 const Stack = createNativeStackNavigator();
+
+LogBox.ignoreAllLogs();
 
 export default function App() {
   return (
