@@ -4,7 +4,6 @@ export const styles = StyleSheet.create({
   content: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
     marginTop: 30,
   },
   input: {
@@ -19,6 +18,8 @@ export const styles = StyleSheet.create({
     width: "95%",
   },
   btn: {
-    backgroundColor: "#6852A5",
+    backgroundColor: "#9B8ACA",
+    borderRadius: 50,
+    padding: 10,
   },
 });

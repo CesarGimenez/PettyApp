@@ -1,11 +1,10 @@
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { Button, Icon } from "react-native-elements";
 
-import React from 'react'
-import { StyleSheet, View } from 'react-native'
-import { Button, Icon } from 'react-native-elements'
+import PetStyles from "./PetStyle";
 
-import PetStyles from './PetStyle'
-
-const styles = StyleSheet.create({ ...PetStyles })
+const styles = StyleSheet.create({ ...PetStyles });
 
 const PhotoButton = () => (
   <View style={styles.coverMetaContainer}>
@@ -14,10 +13,10 @@ const PhotoButton = () => (
       title="3 Photos"
       textStyle={{
         fontSize: 16,
-        fontWeight: '400',
+        fontWeight: "400",
       }}
       buttonStyle={{
-        backgroundColor: 'rgba(128,128,128, 0.7)',
+        backgroundColor: "rgba(128,128,128, 0.7)",
         borderRadius: 5,
         borderWidth: 0,
         elevation: 0,
@@ -30,6 +29,6 @@ const PhotoButton = () => (
       }}
     />
   </View>
-)
+);
 
-export default PhotoButton
+export default PhotoButton;

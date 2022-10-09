@@ -1,12 +1,7 @@
-import {
-  createNavigationContainerRef,
-  useNavigation,
-} from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Account } from "../screens";
 import Login from "../screens/Login";
-import SignUp from "../screens/SignUp";
-import SignIn from "../screens/SignUp";
 
 import { screen } from "../utils";
 

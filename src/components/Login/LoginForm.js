@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { Input, Icon, Button } from "react-native-elements";
 import { useFormik } from "formik";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { initialValues, validationSchema } from "./LoginForm.data";
 import { styles } from "./LoginForm.styles";
-import { screen } from "../../utils";
-import SignIn from "../../screens/SignUp";
+import { useNavigation } from "@react-navigation/native";
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [errorLogged, setErrorLogged] = useState(false);
 
-  const onShowHidePassword = () => setShowPassword((prevState) => !prevState);
+  const navigation = useNavigation();
 
-  const redirect = () => {};
+  const onShowHidePassword = () => setShowPassword((prevState) => !prevState);
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -28,6 +27,7 @@ export function LoginForm() {
           formValue.email,
           formValue.password
         );
+        navigation.navigate("Navigation");
       } catch (error) {
         setErrorLogged(true);
       }
@@ -61,15 +61,67 @@ export function LoginForm() {
         errorMessage={formik.errors.password}
       />
       <Button
-        title="Iniciar sesión"
+        title="Sign In"
         containerStyle={styles.btnContainer}
         buttonStyle={styles.btn}
+        titleStyle={{ fontSize: 20 }}
         onPress={formik.handleSubmit}
         loading={formik.isSubmitting}
       />
-      <Text>
-        No posees una cuenta? <Text onPress={() => redirect()}>Registrate</Text>
-      </Text>
+      <View
+        style={{
+          flexDirection: "row",
+          padding: 50,
+        }}
+      >
+        <View
+          style={{
+            marginRight: 20,
+            backgroundColor: "#9B8ACA",
+            borderRadius: 50,
+            padding: 5,
+          }}
+        >
+          <TouchableOpacity>
+            <Icon
+              type="material-community"
+              name="google"
+              color="#FFF"
+              size={35}
+            ></Icon>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            marginLeft: 20,
+            padding: 5,
+            backgroundColor: "#9B8ACA",
+            borderRadius: 50,
+          }}
+        >
+          <TouchableOpacity>
+            <Icon
+              type="material-community"
+              name="facebook"
+              color="#FFF"
+              size={35}
+            ></Icon>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View style={{ marginTop: 20, alignSelf: "center" }}>
+        <Text style={{ color: "#6852A5", fontSize: 18 }}>
+          No posees una cuenta?{" "}
+          <Text
+            onPress={() => navigation.navigate("Register")}
+            style={{ color: "#8550A0" }}
+          >
+            {" "}
+            Registrate
+          </Text>
+        </Text>
+      </View>
+
       {errorLogged && <Text>Credenciales de usuario incorrectas</Text>}
     </View>
   );

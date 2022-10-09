@@ -23,6 +23,7 @@ const SignUp = () => {
             fontSize: 35,
             color: "#FFF",
             paddingVertical: 25,
+            fontWeight: "700",
           }}
         >
           Sign Up

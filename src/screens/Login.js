@@ -2,6 +2,7 @@ import { View, Text, ScrollView, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { styles } from "./Styles";
+import { Icon } from "react-native-elements";
 
 const Login = ({ navigation }) => {
   const goToRegister = () => {
@@ -23,12 +24,13 @@ const Login = ({ navigation }) => {
       >
         <Text
           style={{
-            fontSize: 35,
+            fontSize: 50,
             color: "#FFF",
             paddingVertical: 25,
+            fontWeight: "500",
           }}
         >
-          Bienvenido a Petty
+          Bienvenido a <Text style={{ color: "yellow" }}>Petty</Text>
         </Text>
         <View
           style={{
@@ -36,7 +38,7 @@ const Login = ({ navigation }) => {
           }}
         >
           <Text style={styles.btnRegister} onPress={goToRegister}>
-            Continuar con Google
+            Continuar con <Text style={{ fontWeight: "700" }}>Google</Text>
           </Text>
         </View>
         <View
@@ -45,7 +47,7 @@ const Login = ({ navigation }) => {
           }}
         >
           <Text style={styles.btnRegister} onPress={goToRegister}>
-            Continuar con Facebook
+            Continuar con <Text style={{ fontWeight: "700" }}>Facebook</Text>
           </Text>
         </View>
         <View
@@ -53,8 +55,23 @@ const Login = ({ navigation }) => {
             paddingTop: 50,
           }}
         >
-          <Text style={styles.btnRegister} onPress={goToRegister}>
-            Regístrar con email
+          <Text
+            style={styles.btnRegister1}
+            onPress={() => navigation.navigate("SignIn")}
+          >
+            Continuar con email
+          </Text>
+        </View>
+        <View style={{ padding: 20, alignSelf: "center", marginTop: 10 }}>
+          <Text style={{ color: "#FFF", fontSize: 20 }}>
+            Ya tienes una cuenta?{" "}
+            <Text
+              style={{ fontStyle: "Bold", color: "#FF0" }}
+              onPress={() => navigation.navigate("SignIn")}
+            >
+              {" "}
+              Ingresar
+            </Text>
           </Text>
         </View>
       </View>

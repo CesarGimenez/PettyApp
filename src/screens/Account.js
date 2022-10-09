@@ -1,7 +1,12 @@
 import { View, Text, ScrollView, Button } from "react-native";
 import React from "react";
+import { getAuth, signOut } from "firebase/auth";
 
 const Account = ({ navigation }) => {
+  const handleLogout = async () => {
+    const auth = getAuth();
+    await signOut(auth);
+  };
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -29,6 +34,7 @@ const Account = ({ navigation }) => {
           title="Unete!"
           onPress={() => navigation.navigate("Login")}
         ></Button>
+        <Button title="Cerrar sesion" onPress={() => handleLogout()}></Button>
       </View>
     </ScrollView>
   );
