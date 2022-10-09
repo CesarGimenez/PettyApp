@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Account } from "../screens";
 import Login from "../screens/Login";
+import MyPets from "../screens/Profile/MyPets";
 import { UserGuestScreen } from "../screens/Profile/UserGuest";
 import { UserLoggedScreen } from "../screens/Profile/UserLogged";
 
@@ -32,6 +33,11 @@ export function AccountStack() {
       <Stack.Screen
         name={"UserLogged"}
         component={UserLoggedScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name={"MyPets"}
+        component={MyPets}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

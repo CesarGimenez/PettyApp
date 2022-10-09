@@ -40,4 +40,19 @@ export const styles = StyleSheet.create({
     color: "#9B8ACA",
     fontSize: 20,
   },
+  contentInfo: {
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 30,
+  },
+  avatar: {
+    backgroundColor: "#9B8ACA",
+  },
+  displayName: {
+    fontWeight: "bold",
+    fontSize: 20,
+    paddingBottom: 5,
+    marginTop: 10,
+  },
 });

@@ -6,9 +6,16 @@ import { ChangeDisplayNameForm } from "./changeName";
 import { Modal } from "../Modal";
 import { ChangeEmailForm } from "./changeEmail";
 import { ChangePasswordForm } from "./changePassword";
+import { useNavigation } from "@react-navigation/native";
 
 export function AccountOptions(props) {
   const { onReload } = props;
+
+  const navigation = useNavigation();
+
+  const Navigate = (name) => {
+    navigation.navigate(name);
+  };
 
   const [showModal, setShowModal] = useState(false);
   const [renderComponent, setRenderComponent] = useState(null);
@@ -31,15 +38,11 @@ export function AccountOptions(props) {
     if (key === "password") {
       setRenderComponent(<ChangePasswordForm onClose={onCloseOpenModal} />);
     }
-    const handleLogout = async () => {
-      const auth = getAuth();
-      await signOut(auth);
-    };
 
     onCloseOpenModal();
   };
 
-  const menuOptions = getMenuOptions(selectedComponent);
+  const menuOptions = getMenuOptions(selectedComponent, Navigate);
 
   return (
     <ScrollView>
@@ -68,7 +71,7 @@ export function AccountOptions(props) {
   );
 }
 
-function getMenuOptions(selectedComponent) {
+function getMenuOptions(selectedComponent, Navigate) {
   return [
     {
       title: "Mis encuentros",
@@ -86,7 +89,7 @@ function getMenuOptions(selectedComponent) {
       iconColorLeft: "#9B8ACA",
       iconNameRight: "chevron-right",
       iconColorRight: "#ccc",
-      onPress: () => selectedComponent("displayName"),
+      onPress: () => Navigate("MyPets"),
     },
     {
       title: "Servicio veterinario",
