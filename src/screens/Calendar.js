@@ -3,8 +3,8 @@ import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import React from "react";
 import petData from "../../pettyData.json";
 
-const Calendar = ({ route }) => {
-  const id = route.params.id;
+const Calendar = ({ route, navigation }) => {
+  const id = route?.params?.id;
   const petFilter = petData.filter((pet) => pet.id == id);
   const pet = petFilter[0];
   return (
@@ -55,132 +55,152 @@ const Calendar = ({ route }) => {
           Proximos
         </Text>
       </View>
-
-      <View
-        style={{
-          padding: 5,
-          backgroundColor: "white",
-          borderRadius: 35,
-          marginTop: 50,
-          marginLeft: 15,
-          marginRight: 15,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-          }}
-        >
-          <Image
-            style={{
-              flex: 0,
-              width: 130,
-              height: 130,
-              resizeMode: "contain",
-              borderRadius: 25,
-              alignSelf: "flex-start",
-              padding: 10,
-              margin: 15,
-            }}
-            source={{
-              uri: pet?.photos[0],
-            }}
-          />
-
-          <View style={{ flex: 1 }}>
-            <Text
-              style={{
-                fontSize: 20,
-                color: "#070821",
-                padding: 10,
-                marginTop: 10,
-                alignSelf: "flex-start",
-                fontWeight: "bold",
-              }}
-            >
-              {pet?.name || "Sin nombre"}
-            </Text>
-
-            <Text
-              style={{
-                fontSize: 18,
-                color: "#070821",
-                padding: 10,
-                alignSelf: "flex-start",
-                fontWeight: "bold",
-              }}
-            >
-              {pet?.gender === "M" ? "Macho" : "Hembra"},{" "}
-              {pet?.breed || "Sin raza"}
-            </Text>
-          </View>
-        </View>
-
+      {pet && (
         <View
           style={{
             padding: 5,
-            backgroundColor: "#F2F0F5",
-            borderRadius: 40,
-            marginTop: 20,
+            backgroundColor: "white",
+            borderRadius: 35,
+            marginTop: 50,
             marginLeft: 15,
             marginRight: 15,
-            marginBottom: 10,
           }}
         >
-          <Text
+          <View
             style={{
-              fontSize: 15,
-              color: "#070821",
-              padding: 15,
-              alignSelf: "flex-start",
+              flexDirection: "row",
             }}
           >
-            <Ionicons name="home" size={16} color={"black"} />
-            {`  ${pet?.address}` || "Sin direccion"}
-          </Text>
+            <Image
+              style={{
+                flex: 0,
+                width: 130,
+                height: 130,
+                resizeMode: "contain",
+                borderRadius: 25,
+                alignSelf: "flex-start",
+                padding: 10,
+                margin: 15,
+              }}
+              source={{
+                uri: pet?.photos[0],
+              }}
+            />
 
-          <Text
-            style={{
-              fontSize: 12,
-              color: "#070821",
-              alignSelf: "flex-start",
-              paddingLeft: 30,
-            }}
-          >
-            Altamira Caracas, Ve
-          </Text>
+            <View style={{ flex: 1 }}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  color: "#070821",
+                  padding: 10,
+                  marginTop: 10,
+                  alignSelf: "flex-start",
+                  fontWeight: "bold",
+                }}
+              >
+                {pet?.name || "Sin nombre"}
+              </Text>
 
-          <Text
-            style={{
-              fontSize: 15,
-              color: "#070821",
-              padding: 20,
-              marginTop: 5,
-              alignSelf: "flex-start",
-            }}
-          >
-            <Ionicons name="calendar" size={16} color={"black"} />
-            Jueves, 15 Sep - 10:30 am
-          </Text>
+              <Text
+                style={{
+                  fontSize: 18,
+                  color: "#070821",
+                  padding: 10,
+                  alignSelf: "flex-start",
+                  fontWeight: "bold",
+                }}
+              >
+                {pet?.gender === "M" ? "Macho" : "Hembra"},{" "}
+                {pet?.breed || "Sin raza"}
+              </Text>
+            </View>
+          </View>
 
-          <Text
+          <View
             style={{
-              fontSize: 16,
-              color: "white",
-              backgroundColor: "#9B8ACA",
-              paddingLeft: 25,
-              paddingRight: 25,
-              paddingBottom: 8,
-              paddingTop: 8,
-              margin: 20,
-              alignSelf: "center",
-              borderRadius: 50,
+              padding: 5,
+              backgroundColor: "#F2F0F5",
+              borderRadius: 40,
+              marginTop: 20,
+              marginLeft: 15,
+              marginRight: 15,
+              marginBottom: 10,
             }}
           >
-            Cancelar
-          </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                color: "#070821",
+                padding: 15,
+                alignSelf: "flex-start",
+              }}
+            >
+              <Ionicons name="home" size={16} color={"black"} />
+              {`  ${pet?.address}` || "Sin direccion"}
+            </Text>
+
+            <Text
+              style={{
+                fontSize: 12,
+                color: "#070821",
+                alignSelf: "flex-start",
+                paddingLeft: 30,
+              }}
+            >
+              Altamira Caracas, Ve
+            </Text>
+
+            <Text
+              style={{
+                fontSize: 15,
+                color: "#070821",
+                padding: 20,
+                marginTop: 5,
+                alignSelf: "flex-start",
+              }}
+            >
+              <Ionicons name="calendar" size={16} color={"black"} />
+              Jueves, 15 Sep - 10:30 am
+            </Text>
+
+            <View style={{ flexDirection: "row" }}>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: "white",
+                  backgroundColor: "#9B8ACA",
+                  paddingLeft: 25,
+                  paddingRight: 25,
+                  paddingBottom: 8,
+                  paddingTop: 8,
+                  margin: 20,
+                  alignSelf: "center",
+                  borderRadius: 50,
+                }}
+              >
+                Cancelar
+              </Text>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: "white",
+                  backgroundColor: "#9B8ACA",
+                  paddingLeft: 25,
+                  paddingRight: 25,
+                  paddingBottom: 8,
+                  paddingTop: 8,
+                  margin: 20,
+                  alignSelf: "center",
+                  borderRadius: 50,
+                }}
+                onPress={() => navigation.navigate("Confirm", { id })}
+              >
+                Aceptar
+              </Text>
+            </View>
+          </View>
         </View>
-      </View>
+      )}
     </ScrollView>
   );
 };

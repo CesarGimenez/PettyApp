@@ -12,6 +12,7 @@ import SignUp from "./src/screens/SignUp";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { LogBox } from "react-native";
 import PetProfile from "./src/components/PetProfile/index";
+import ConfirmAdoption from "./src/views/ConfirmAdoption";
 
 enableScreens();
 const Stack = createNativeStackNavigator();
@@ -64,6 +65,11 @@ export default function App() {
         <Stack.Screen
           name="AgendarDone"
           component={AgendarDone}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Confirm"
+          component={ConfirmAdoption}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
