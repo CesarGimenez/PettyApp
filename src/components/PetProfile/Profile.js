@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
   Image,
+  Pressable,
 } from 'react-native'
 import PropTypes from 'prop-types'
 import { Ionicons } from "@expo/vector-icons";
@@ -140,24 +141,30 @@ class Product extends Component {
           <View style={styles.productRow}>{this.renderHealthDetails()}</View>
         </ScrollView>
         
-        <View style={{ flexDirection: 'row' }}>
-          <View style={[styles.buttonFooter2, { flex: 1 }]}>
-            <Text style={styles.textFooter}>
-            <Ionicons
-                name={"close-outline"}
+        <View>
+            <Pressable
+              onPress={console.log('exit')}
+              style={[styles.buttonFooter2]}
+            >
+              <Ionicons
+                name={"close-sharp"}
                 size={40}
-            />
-            </Text>
-          </View>
+                color={"#9B8ACA"}
+              />
+            </Pressable>
 
-          <View style={[styles.buttonFooter1, { flex: 1 }]}>
-            <Text style={styles.textFooter2}>
-            <Ionicons
-                name={"heart-circle-outline"}
+            <Pressable
+              onPress={console.log('exit')}
+              style={[styles.buttonFooter1]}
+            >
+              <Ionicons
+                name={"heart-circle"}
                 size={40}
-            />
-            </Text>
-          </View>
+                color={"white"}
+              />
+            </Pressable>
+
+          
         </View>
       </View>
     )
