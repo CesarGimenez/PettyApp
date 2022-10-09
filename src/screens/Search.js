@@ -35,17 +35,6 @@ const properties = [
     favorite: true,
   },
   {
-    id: "2afomeoivioe4732u",
-    name: "Docky",
-    breed: "Cruzado",
-    gender: 'M',
-    age: "Adulto",
-    photos: [
-      "https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/large/public/2021-10/los-mejores-juegos-de-perritos-cachorros-por-mes-de-age.png?itok=UNEbd6Xh",
-    ],
-    favorite: true,
-  },
-  {
     id: "2afomeoivi447852u",
     name: "Luna",
     breed: "Shi Tzu",
@@ -140,8 +129,8 @@ const Search = ({navigation}) => {
             gender={item.gender}
             favorite={item.favorite}
             onPress={() =>
-              alert(
-                "navigation.navigate passing in data " + JSON.stringify(item)
+              console.log(
+                "search navigation " + JSON.stringify(item)
               )
             }
             navigation={navigation}
