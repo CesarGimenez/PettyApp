@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { ScrollView, View } from "react-native";
 import { ListItem, Icon, Text } from "react-native-elements";
 import { map } from "lodash";
-// import { Modal } from "../../components";
-// import { ChangeDisplayNameForm } from "./ChangeDisplayNameForm";
-// import { ChangeEmailForm } from "./ChangeEmailForm";
-// import { ChangePasswordForm } from "./ChangePasswordForm";
+import { ChangeDisplayNameForm } from "./changeName";
+import { Modal } from "../Modal";
+import { ChangeEmailForm } from "./changeEmail";
+import { ChangePasswordForm } from "./changePassword";
 
 export function AccountOptions(props) {
   const { onReload } = props;
@@ -17,17 +17,19 @@ export function AccountOptions(props) {
 
   const selectedComponent = (key) => {
     if (key === "displayName") {
-      setRenderComponent();
-      // <ChangeDisplayNameForm onClose={onCloseOpenModal} onReload={onReload} />
+      setRenderComponent(
+        <ChangeDisplayNameForm onClose={onCloseOpenModal} onReload={onReload} />
+      );
     }
 
     if (key === "email") {
-      setRenderComponent();
-      // <ChangeEmailForm onClose={onCloseOpenModal} onReload={onReload} />
+      setRenderComponent(
+        <ChangeEmailForm onClose={onCloseOpenModal} onReload={onReload} />
+      );
     }
 
     if (key === "password") {
-      //   setRenderComponent(<ChangePasswordForm onClose={onCloseOpenModal} />);
+      setRenderComponent(<ChangePasswordForm onClose={onCloseOpenModal} />);
     }
     const handleLogout = async () => {
       const auth = getAuth();
@@ -59,9 +61,9 @@ export function AccountOptions(props) {
         </ListItem>
       ))}
 
-      {/* <Modal show={showModal} close={onCloseOpenModal}>
+      <Modal show={showModal} close={onCloseOpenModal}>
         {renderComponent}
-      </Modal> */}
+      </Modal>
     </ScrollView>
   );
 }

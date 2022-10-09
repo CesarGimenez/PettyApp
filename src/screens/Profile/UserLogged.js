@@ -11,11 +11,11 @@ export function UserLoggedScreen() {
   const [loading, setLoading] = useState(false);
   const [loadingText, setLoadingText] = useState("");
   const [_, setReload] = useState(false);
+  const auth = getAuth();
 
   const onReload = () => setReload((prevState) => !prevState);
 
   const logout = async () => {
-    const auth = getAuth();
     await signOut(auth);
   };
 

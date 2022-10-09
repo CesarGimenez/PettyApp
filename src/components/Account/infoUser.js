@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View } from "react-native";
 import { Avatar, Text } from "react-native-elements";
-// import * as ImagePicker from "expo-image-picker";
+import * as ImagePicker from "expo-image-picker";
 import { getAuth, updateProfile } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { styles } from "./styles";
@@ -11,17 +11,17 @@ export function InfoUser(props) {
   const auth = getAuth();
   const { currentUser } = auth;
   //   const { uid, photoURL, displayName, email } = getAuth()?.currentUser;
-  const [avatar, setAvatar] = useState(auth?.photoURL);
-
-  //   const changeAvatar = async () => {
-  //     const result = await ImagePicker.launchImageLibraryAsync({
-  //       mediaTypes: ImagePicker.MediaTypeOptions.All,
-  //       allowsEditing: true,
-  //       aspect: [4, 3],
-  //     });
-
-  //     if (!result.cancelled) uploadImage(result.uri);
-  //   };
+  const [avatar, setAvatar] = useState(currentUser?.photoURL);
+  console.log(currentUser.photoURL);
+  const changeAvatar = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+    });
+    console.log(result);
+    if (!result.cancelled) uploadImage(result.uri);
+  };
 
   const uploadImage = async (uri) => {
     setLoadingText("Actualizando Avatar");
@@ -31,7 +31,7 @@ export function InfoUser(props) {
     const blob = await response.blob();
 
     const storage = getStorage();
-    const storageRef = ref(storage, `avatar/${auth?.uid}`);
+    const storageRef = ref(storage, `avatar/${currentUser?.uid}`);
 
     uploadBytes(storageRef, blob).then((snapshot) => {
       updatePhotoUrl(snapshot.metadata.fullPath);
@@ -44,8 +44,7 @@ export function InfoUser(props) {
 
     const imageUrl = await getDownloadURL(imageRef);
 
-    const auth = getAuth();
-    updateProfile(auth.currentUser, { photoURL: imageUrl });
+    updateProfile(currentUser, { photoURL: imageUrl });
 
     setAvatar(imageUrl);
     setLoading(false);
@@ -60,12 +59,14 @@ export function InfoUser(props) {
         icon={{ type: "material", name: "person" }}
         source={{ uri: avatar }}
       >
-        <Avatar.Accessory size={24} />
+        <Avatar.Accessory size={24} onPress={changeAvatar} />
       </Avatar>
 
       <View>
-        <Text style={styles.displayName}>{auth?.displayName || "Anónimo"}</Text>
-        <Text>{auth?.email}</Text>
+        <Text style={styles.displayName}>
+          {currentUser?.displayName || "Anónimo"}
+        </Text>
+        <Text>{currentUser?.email}</Text>
       </View>
     </View>
   );
