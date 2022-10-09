@@ -80,7 +80,7 @@ const OnboardingScreen = ({navigation}) => (
 
       pages={[
         {
-          backgroundColor: "#F9F8FD",
+          backgroundColor: "#F4F2F9",
           image: (
             <Image
               source={require("../../assets/welcome1.png")}
@@ -92,7 +92,7 @@ const OnboardingScreen = ({navigation}) => (
           titleStyles: { color: '#070821', fontWeight: "bold" }
         },
         {
-          backgroundColor: "#F9F8FD",
+          backgroundColor: "#F4F2F9",
           image: (
             <Image
               source={require("../../assets/welcome2.png")}
@@ -104,7 +104,7 @@ const OnboardingScreen = ({navigation}) => (
           titleStyles: { color: '#070821', fontWeight: "bold" }
         },
         {
-          backgroundColor: "#F9F8FD",
+          backgroundColor: "#F4F2F9",
           image: (
             <Image
               source={require("../../assets/welcome2.png")}

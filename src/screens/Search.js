@@ -3,8 +3,6 @@ import { SearchBar } from "react-native-elements";
 import { getAuth, signOut } from "firebase/auth";
 import React from "react";
 import Card from "../components/Card/Card";
-import { Ionicons, FontAwesome } from "@expo/vector-icons";
-
 
 const styles = StyleSheet.create({
   barContainer: { flexDirection: "row", justifyContent: 'center', alignItems: 'center'},
@@ -83,7 +81,7 @@ const properties = [
 
 ];
 
-const Search = () => {
+const Search = ({navigation}) => {
   const handleLogout = async () => {
     const auth = getAuth();
     await signOut(auth);
@@ -146,6 +144,7 @@ const Search = () => {
                 "navigation.navigate passing in data " + JSON.stringify(item)
               )
             }
+            navigation={navigation}
           />
         )}
       />

@@ -23,6 +23,7 @@ import {
     favorite,
     onPress,
     style,
+    navigation,
     ...rest
   }) {
 
@@ -43,10 +44,15 @@ import {
     });
     const [favoriteItem, setFavoriteItem] = useState(favorite);
   
+    const { navigate } = navigation;
+
     const handleFavoriteItemClicked = () => {
       setFavoriteItem(!favoriteItem);
       console.log("make some backend request");
+      navigate('PetProfile')
     };
+
+    
   
     return (
       <View style={[styles.cardContainer, style]} {...rest}>
