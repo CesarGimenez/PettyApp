@@ -13,6 +13,8 @@ import SignUp from "./src/screens/SignUp";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { LogBox } from "react-native";
 import PetProfile from "./src/components/PetProfile/index";
+import ConfirmAdoption from "./src/views/ConfirmAdoption";
+import Congrats from "./src/views/Congrats";
 
 enableScreens();
 const Stack = createNativeStackNavigator();
@@ -68,8 +70,18 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+<<<<<<< HEAD
           name="Calendar"
           component={Calendar}
+=======
+          name="Confirm"
+          component={ConfirmAdoption}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Congrats"
+          component={Congrats}
+>>>>>>> dev-cesar
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

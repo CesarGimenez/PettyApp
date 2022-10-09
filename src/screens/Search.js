@@ -3,15 +3,8 @@ import { SearchBar } from "react-native-elements";
 import { getAuth, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card/Card";
-import {
-  collection,
-  getFirestore,
-  onSnapshot,
-  orderBy,
-  query,
-} from "firebase/firestore";
 
-import pettyData from "../../pettyData.json"
+import pettyData from "../../pettyData.json";
 
 const styles = StyleSheet.create({
   barContainer: { flexDirection: "row", justifyContent: 'center', alignItems: 'center'},
@@ -22,27 +15,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const properties = pettyData
+const properties = pettyData;
 
 const Search = ({ navigation }) => {
-  const [pets, setPets] = useState(null);
-  const db = getFirestore();
   const handleLogout = async () => {
     const auth = getAuth();
     await signOut(auth);
   };
-
-  useEffect(() => {
-    const q = query(collection(db, "pets"), orderBy("createdAt", "desc"));
-
-    onSnapshot(q, (snapshot) => {
-      setPets(snapshot.docs);
-    });
-  }, []);
-  const listPets = pets?.map(
-    (item) => item?._document?.data?.value?.mapValue?.fields
-  );
-  console.log(listPets);
   return (
     /*     <ScrollView
       showsVerticalScrollIndicator={false}

@@ -23,20 +23,22 @@ const auth = getAuth();
 
 class Profile extends Component {
   static propTypes = {
-    img: PropTypes.string.isRequired,
-    detail: PropTypes.string.isRequired,
+    img: PropTypes.string,
+    detail: PropTypes.string,
     containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
   };
 
   static defaultProps = {
     containerStyle: {},
   };
-  
+
   renderDetail = () => {
     return (
       <View style={{ flexDirection: "row" }}>
         <Text style={[styles.detailText, { flex: 2 }]}>{this.props.name}</Text>
-        <Text style={[styles.detailText2, { flex: 0 }]}>{this.props.breed}</Text>
+        <Text style={[styles.detailText2, { flex: 0 }]}>
+          {this.props.breed}
+        </Text>
       </View>
     );
   };
@@ -56,9 +58,7 @@ class Profile extends Component {
     return (
       <View>
         <Text style={styles.detailText}>Caracteristicas</Text>
-        <Text style={styles.subDetailText}>
-        {this.props.description}
-        </Text>
+        <Text style={styles.subDetailText}>{this.props.description}</Text>
       </View>
     );
   };
@@ -105,7 +105,9 @@ class Profile extends Component {
         </View>
         <View style={[styles.navigatorButton, { flex: 2 }]}>
           <Text style={styles.navigatorTextTittle}>Peso</Text>
-          <Text style={styles.navigatorTextSubTittle}>{this.props.weight} kg</Text>
+          <Text style={styles.navigatorTextSubTittle}>
+            {this.props.weight} kg
+          </Text>
         </View>
         <View style={[styles.navigatorButton, { flex: 2 }]}>
           <Text style={styles.navigatorTextTittle}>Genero</Text>
@@ -168,7 +170,9 @@ class Profile extends Component {
           <Pressable
             onPress={() =>
               auth.currentUser
-                ? this.props.navigation.navigate("Agendar")
+                ? this.props.navigation.navigate("Agendar", {
+                    id: this.props.id,
+                  })
                 : this.props.navigation.navigate("Login")
             }
             style={[styles.buttonFooter1]}
