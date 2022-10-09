@@ -34,9 +34,7 @@ const Navigation = ({ route }) => {
       })}
     >
       <Tab.Screen name="Buscar" component={SearchStack} />
-      {/* <Tab.Screen name="Veterinario" component={Veterinary} />
-      <Tab.Screen name="Refugios" component={ShelterStack} />  */}
-      <Tab.Screen name="Calendar" component={Calendar} />
+      <Tab.Screen name="Mis encuentros" component={Calendar} />
       <Tab.Screen name="Cuenta" component={AccountStack} />
     </Tab.Navigator>
   );
@@ -49,7 +47,7 @@ const IconOptions = (route, color, size) => {
     iconName = "user";
   }
 
-  if (route?.name === "Calendar") {
+  if (route?.name === "Mis encuentros") {
     iconName = "clock-o";
   }
 
