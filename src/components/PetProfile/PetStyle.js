@@ -40,7 +40,7 @@ export default {
 
   buttonFooter1: {
     position: "absolute",
-    top: -120,
+    top: -80,
     right: 80,
     zIndex: 10,
     padding: 10,
@@ -62,7 +62,7 @@ export default {
   },
   buttonFooter2: {
     position: "absolute",
-    top: -120,
+    top: -80,
     right: 280,
     zIndex: 10,
     padding: 10,

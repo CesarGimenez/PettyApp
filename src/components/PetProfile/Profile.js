@@ -157,7 +157,7 @@ class Product extends Component {
             onPress={() => this.props.navigation.navigate("Search")}
             style={[styles.buttonFooter2]}
           >
-            <Ionicons name={"close-sharp"} size={40} color={"#9B8ACA"} />
+            <Ionicons name={"close-sharp"} size={30} color={"#9B8ACA"} />
           </Pressable>
 
           <Pressable
@@ -168,7 +168,7 @@ class Product extends Component {
             }
             style={[styles.buttonFooter1]}
           >
-            <Ionicons name={"heart-circle"} size={40} color={"white"} />
+            <Ionicons name={"heart-circle"} size={30} color={"white"} />
           </Pressable>
         </View>
       </View>
