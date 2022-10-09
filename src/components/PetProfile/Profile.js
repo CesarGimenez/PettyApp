@@ -46,7 +46,7 @@ class Profile extends Component {
       <View>
         <Text style={[styles.detailText3]}>
           <Ionicons name={"location-outline"} size={20} />
-          Altamira, Caracas
+          {this.props.address}
         </Text>
       </View>
     );
