@@ -23,7 +23,6 @@ const properties = pettyData;
 
 const Search = ({ navigation }) => {
   const auth = getAuth();
-  console.log(auth.currentUser);
   return (
     /*     <ScrollView
       showsVerticalScrollIndicator={false}
