@@ -86,11 +86,6 @@ export default function App() {
           component={Congrats}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="News"
-          component={News}
-          options={{ headerShown: false }}
-        />
       </Stack.Navigator>
     </NavigationContainer>
   );

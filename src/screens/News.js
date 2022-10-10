@@ -1,5 +1,5 @@
 import { View, FlatList, StyleSheet, StatusBar, Text } from "react-native";
-import { SearchBar } from "react-native-elements";
+import { Icon, SearchBar } from "react-native-elements";
 import { getAuth, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import CardNews from "../components/Card/CardNews";
@@ -7,8 +7,12 @@ import CardNews from "../components/Card/CardNews";
 import newsData from "../../newsData.json";
 
 const styles = StyleSheet.create({
-  barContainer: { flexDirection: "row", justifyContent: 'center', alignItems: 'center'},
-  searchContainer: {backgroundColor: '#F9F8FD'},
+  barContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  searchContainer: { backgroundColor: "#F9F8FD" },
   listContainer: {
     marginTop: StatusBar.currentHeight || 0,
     marginBottom: 200,
@@ -19,28 +23,26 @@ const properties = newsData;
 
 const News = ({ navigation }) => {
   const auth = getAuth();
-  console.log(auth.currentUser);
   return (
-    /*     <ScrollView
-      showsVerticalScrollIndicator={false}
-      style={{
-        height: 100,
-        backgroundColor: "#6852A5",
-      }}
-    >
-
-      <Button onPress={handleLogout} title="logout"></Button>
-    </ScrollView> */
-
     <View style={styles.searchContainer}>
-      <Text style={{
-        fontSize: 20,
-        fontWeight: "bold",
-        color: "black",
-        alignSelf: 'center',
-        paddingTop: 20,
-        margin: 15
-      }}>
+      <Text onPress={() => navigation.goBack()}>
+        <Icon
+          type="material-community"
+          name="chevron-left"
+          size={40}
+          color={"#9B8ACA"}
+        />
+      </Text>
+      <Text
+        style={{
+          fontSize: 20,
+          fontWeight: "bold",
+          color: "black",
+          alignSelf: "center",
+          paddingTop: 20,
+          margin: 15,
+        }}
+      >
         Conoce nuestras recomendaciones
       </Text>
 

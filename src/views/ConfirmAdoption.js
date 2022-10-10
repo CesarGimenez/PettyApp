@@ -112,9 +112,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#9B8ACA",
   },
   textStyle: {
-    color: "white",
+    color: "gray",
+    marginTop: 10,
+  },
+  textStyle2: {
+    color: "black",
     fontWeight: "bold",
-    textAlign: "center",
+    fontSize: 18,
+    marginBottom: 10,
   },
   bagde: {
     width: 100,
@@ -132,9 +137,6 @@ const ConfirmAdoption = ({ navigation, route }) => {
   const id = route?.params?.id;
   const petFilter = petData.filter((pet) => pet.id == id);
   const pet = petFilter[0];
-  const confirmAdoption = () => {
-    navigation.navigate("Congrats");
-  };
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -175,13 +177,13 @@ const ConfirmAdoption = ({ navigation, route }) => {
 
         <Text style={styles.textTitle}>Informacion de tu nueva mascota</Text>
 
-        <Text>Nombre de la mascota</Text>
-        <Text>{pet?.name}</Text>
-        <Text>Edad</Text>
-        <Text>{pet?.ade}</Text>
-        <Text>Raza</Text>
-        <Text>{pet?.breed}</Text>
-        <Text>Genero</Text>
+        <Text style={styles.textStyle}>Nombre de la mascota</Text>
+        <Text style={styles.textStyle2}>{pet?.name}</Text>
+        <Text style={styles.textStyle}>Edad</Text>
+        <Text style={styles.textStyle2}>{pet?.age}</Text>
+        <Text style={styles.textStyle}>Raza</Text>
+        <Text style={styles.textStyle2}>{pet?.breed}</Text>
+        <Text style={styles.textStyle}>Genero</Text>
         {pet?.gender === "M" ? (
           <Text style={styles.bagde}>Macho</Text>
         ) : (
@@ -195,38 +197,148 @@ const ConfirmAdoption = ({ navigation, route }) => {
             alignSelf: "center",
             alignContent: "center",
             fontWeight: "bold",
-            marginBottom: 60,
+            marginBottom: 30,
+            marginTop: 30,
           }}
         >
           Encuesta del encuentro
         </Text>
 
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles.textStyle2}>Vacunado</Text>
+          <Icon
+            type="material-community"
+            name={pet?.vacunado ? "check" : "close"}
+            size={40}
+            color={"#9B8ACA"}
+          />
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles.textStyle2}>Castrado</Text>
+          <Icon
+            type="material-community"
+            name={pet?.castrado ? "check" : "close"}
+            size={40}
+            color={"#9B8ACA"}
+          />
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles.textStyle2}>Desparasitado</Text>
+          <Icon
+            type="material-community"
+            name={pet?.desparacitado ? "check" : "close"}
+            size={40}
+            color={"#9B8ACA"}
+          />
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles.textStyle2}>Buena salud</Text>
+          <Icon
+            type="material-community"
+            name={pet?.healthy ? "check" : "close"}
+            size={40}
+            color={"#9B8ACA"}
+          />
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles.textStyle2}>Fue de tu agrado</Text>
+          <Icon
+            type="material-community"
+            name={pet?.favorite ? "check" : "close"}
+            size={40}
+            color={"#9B8ACA"}
+          />
+        </View>
         <Text
           style={{
             fontSize: 22,
             color: "black",
-            marginTop: 10,
+            marginTop: 20,
             alignSelf: "center",
             alignContent: "center",
-            marginBottom: 10,
+            marginBottom: 20,
+            fontWeight: "bold",
           }}
         >
           Recomendaciones
         </Text>
         <Text
           style={{
-            marginBottom: 10,
+            marginBottom: 20,
           }}
         >
           Puedes dirigirte a estos centros de asistencia y completar su cuidado{" "}
         </Text>
-
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-around",
+            marginBottom: 50,
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Icon
+              type="material-community"
+              name="plus"
+              size={40}
+              color={"#9B8ACA"}
+            />
+            <Text>Agregar</Text>
+          </View>
+          <View
+            style={{
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Icon
+              type="material-community"
+              name="needle"
+              size={40}
+              color={"#9B8ACA"}
+            />
+            <Text>Veterinarios</Text>
+          </View>
+          <View
+            style={{
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Icon
+              type="material-community"
+              name="needle"
+              size={40}
+              color={"#9B8ACA"}
+            />
+            <Text>Plan vacunas</Text>
+          </View>
+        </View>
         <Button
           title="Adoptar"
           buttonStyle={styles.btnContainer}
           titleStyle={{ fontSize: 20 }}
-          onPress={() => confirmAdoption()}
+          onPress={() => navigation.navigate("Congrats", { id: pet.id })}
         />
+        <Text
+          style={{
+            color: "#6852A5",
+            textAlign: "center",
+            fontSize: 20,
+            marginTop: 10,
+          }}
+          onPress={() => navigation.navigate("Search")}
+        >
+          Seguir buscando
+        </Text>
       </View>
     </ScrollView>
   );

@@ -6,7 +6,7 @@
       age: "Cachorro",
       age2: "8 meses",
       weight: 2,
-      gender: 'M',
+      gender: 'F',
       photos: [
         "https://http2.mlstatic.com/D_NQ_NP_941466-MLV51615850459_092022-V.jpg",
       ],

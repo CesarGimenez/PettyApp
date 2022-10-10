@@ -1,9 +1,19 @@
 import { View, Text, ScrollView, Image } from "react-native";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import petData from "../../pettyData.json";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Calendar = ({ route, navigation }) => {
+  const [hasLogged, setHasLogged] = useState(null);
+
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      setHasLogged(user ? true : false);
+    });
+  }, []);
+
   const id = route?.params?.id;
   const petFilter = petData.filter((pet) => pet.id == id);
   const pet = petFilter[0];
@@ -55,7 +65,7 @@ const Calendar = ({ route, navigation }) => {
           Proximos
         </Text>
       </View>
-      {pet && (
+      {pet && hasLogged && (
         <View
           style={{
             padding: 5,
