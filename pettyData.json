@@ -2,33 +2,39 @@
     {
       id: "24reaf6r8er7852u",
       name: "Petty",
-      breed: "Cruzado",
+      breed: "Puddle",
       age: "Cachorro",
-      age2: "2 meses",
+      age2: "8 meses",
       weight: 2,
       gender: 'M',
       photos: [
-        "https://www.petdarling.com/wp-content/uploads/2021/01/cachorros.jpg",
+        "https://http2.mlstatic.com/D_NQ_NP_941466-MLV51615850459_092022-V.jpg",
       ],
       favorite: true,
       description: 'Educado en las mejores escuelas para perros',
-      address: 'Altamira, Caracas'
+      address: 'Altamira, Caracas',
+      vacunado: true,
+      castrado: true,
+      desparacitado: false
     },
     {
       id: "4453fd343",
       name: "Sparky",
-      breed: "Corgi",
+      breed: "Cruzado",
       age: "Cachorro",
-      age2: "1 año",
+      age2: "2 años",
       weight: 4,
       gender: 'M',
       photos: [
-        "https://www.elespectador.com/resizer/ti2d1pExzZSzsImY9C3o2NDpKwM=/920x613/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/IWAGH4BFVVEWDEC22MN3PC6ARM.jpg",
+        "https://s3-eu-west-1.amazonaws.com/barkibu-blog/blog+images/a-mi-perro-le-suenan-las-tripas-y-no-quiere-comer-que-puedo-hacer/gases01.jpg?",
   
       ],
       favorite: true,
       description: 'Sparky lleva en el refugio desde su nacimiento, le gusta jugar con medias',
-      address: 'Refugio Amor de Mascotas, Chacaito, Caracas'
+      address: 'Refugio Amor de Mascotas, Chacaito, Caracas',
+      vacunado: true,
+      castrado: true,
+      desparacitado: true
     },
     {
       id: "2afomeoivi447852u",
@@ -39,41 +45,50 @@
       gender: 'F',
       weight: 2,
       photos: [
-        "https://i.pinimg.com/474x/8a/09/53/8a095362a69abf43e61a484965d74df8.jpg",
+        "https://www.elespectador.com/resizer/RHdl-f8tupZW6MBzHKjah_w4shg=/968x645/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/BMOUODGTDNDTHL3AXKHO2PAGVA.PNG",
       ],
       favorite: true,
       description: 'Una cachorrita muy fuerte y juguetona',
-      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas'
+      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas',
+      vacunado: true,
+      castrado: true,
+      desparacitado: false
     },
     {
       id: "2afomeogdijjnu",
       name: "Ponky",
-      breed: "Cruzado",
+      breed: "Corgi",
       age: "Adulto",
       age2: "3 años",
       weight: 3,
       gender: 'F',
       photos: [
-        "https://www.sopitas.com/wp-content/uploads/2022/02/perritos-duelo-resienten-perdida-estudio-universidad-milan-federica-pirrone-1.jpg?w=1120",
+        "https://img.freepik.com/fotos-premium/cachorro-perro-abandonado_601298-571.jpg?w=2000",
       ],
       favorite: true,
       description: 'Educado en las mejores escuelas para perros',
-      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas'
+      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas',
+      vacunado: false,
+      castrado: true,
+      desparacitado: false
     },
     {
       id: "2afomeoias45oe47852u",
       name: "Sam",
-      breed: "Xjkdf",
+      breed: "Pug",
       gender: 'M',
       weight: 5,
       age: "Cachorro",
       age2: "1 año",
       photos: [
-        "https://comoeducarauncachorro.com/blog/wp-content/uploads/p-2-805x452.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/f/fe/My_pug.jpg",
       ],
       favorite: true,
       description: 'Le gusta bañarse escuchando música',
-      address: 'Sabana Grande Caracas'
+      address: 'Sabana Grande Caracas',
+      vacunado: true,
+      castrado: true,
+      desparacitado: false
     },
   
   ];

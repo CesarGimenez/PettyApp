@@ -101,13 +101,13 @@ function getMenuOptions(selectedComponent, Navigate) {
       onPress: () => selectedComponent(""),
     },
     {
-      title: "Invitar amigos",
+      title: "Novedades",
       iconType: "material-community",
       iconNameLeft: "bullhorn-variant-outline",
       iconColorLeft: "#9B8ACA",
       iconNameRight: "chevron-right",
       iconColorRight: "#ccc",
-      onPress: () => selectedComponent(""),
+      onPress: () => Navigate("News"),
     },
     {
       title: "Ayuda",

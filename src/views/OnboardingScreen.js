@@ -10,6 +10,10 @@ let styles = StyleSheet.create({
     resizeMode: "contain",
     width: 400,
     height: 400,
+    alignSelf: 'center',
+    alignContent: 'center',
+    alignItems: "center",
+
   },
   nextButton: {
     backgroundColor: "#9B8ACA",
@@ -42,7 +46,7 @@ const Square = ({ selected }) => {
 const backgroundColor = (isLight) => (isLight ? "blue" : "lightblue");
 const color = (isLight) => backgroundColor(!isLight);
 
-const Next = ({ isLight, bgcolor, ...props }) => (
+const Next = ({ isLight, ...props }) => (
   <Button
     title={"Siguiente"}
     buttonStyle={styles.nextButton}
@@ -70,7 +74,9 @@ const OnboardingScreen = ({ navigation }) => (
   <Onboarding
     onDone={() => navigation.navigate("Navigation")}
     showSkip={false}
-    bottomBarHeight={50}
+    bottomBarHeight={80}
+    transitionAnimationDuration={1}
+    bottomBarColor={'#F4F2F9'}
     NextButtonComponent={Next}
     DoneButtonComponent={Done}
     DotComponent={Square}
@@ -103,7 +109,7 @@ const OnboardingScreen = ({ navigation }) => (
         backgroundColor: "#F4F2F9",
         image: (
           <Image
-            source={require("../../assets/welcome2.png")}
+            source={require("../../assets/welcome4.png")}
             style={styles.image}
           />
         ),
@@ -127,6 +133,7 @@ const OnboardingScreen = ({ navigation }) => (
       },
     ]}
   />
+  
 );
 
 export default OnboardingScreen;

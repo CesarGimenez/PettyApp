@@ -1,10 +1,10 @@
-import { View, FlatList, StyleSheet, StatusBar } from "react-native";
+import { View, FlatList, StyleSheet, StatusBar, Text } from "react-native";
 import { SearchBar } from "react-native-elements";
 import { getAuth, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import Card from "../components/Card/Card";
+import CardNews from "../components/Card/CardNews";
 
-import pettyData from "../../pettyData.json";
+import newsData from "../../newsData.json";
 
 const styles = StyleSheet.create({
   barContainer: { flexDirection: "row", justifyContent: 'center', alignItems: 'center'},
@@ -15,10 +15,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const properties = pettyData;
+const properties = newsData;
 
-const Search = ({ navigation }) => {
+const News = ({ navigation }) => {
   const auth = getAuth();
+  console.log(auth.currentUser);
   return (
     /*     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -32,27 +33,16 @@ const Search = ({ navigation }) => {
     </ScrollView> */
 
     <View style={styles.searchContainer}>
-      <SearchBar
-        placeholder="Buscar"
-        lightTheme
-        round
-        onChangeText={() => console.log("Holi")}
-        autoCorrect={false}
-        searchIcon={{ size: 20 }}
-        onClear={() => console.log("Bye")}
-        containerStyle={{
-          backgroundColor: "white",
-        }}
-        inputContainerStyle={{
-          backgroundColor: "white",
-          alignItems: "center",
-        }}
-        style={{
-          borderRadius: 15,
-          backgroundColor: "white",
-          padding: 8,
-        }}
-      />
+      <Text style={{
+        fontSize: 20,
+        fontWeight: "bold",
+        color: "black",
+        alignSelf: 'center',
+        paddingTop: 20,
+        margin: 15
+      }}>
+        Conoce nuestras recomendaciones
+      </Text>
 
       <FlatList
         style={styles.listContainer}
@@ -60,13 +50,11 @@ const Search = ({ navigation }) => {
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
-          <Card
-            heading={item.name}
+          <CardNews
+            heading={item.tittle}
             images={item.photos}
-            subheading={item.breed}
-            age={item.age}
-            gender={item.gender}
-            favorite={item.favorite}
+            subheading={item.address}
+            description={item.description}
             id={item.id}
             onPress={() =>
               console.log("search navigation " + JSON.stringify(item))
@@ -79,4 +67,4 @@ const Search = ({ navigation }) => {
   );
 };
 
-export default Search;
+export default News;

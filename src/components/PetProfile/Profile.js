@@ -64,25 +64,30 @@ class Profile extends Component {
   };
 
   renderHealthDetails = () => {
+
+    const vacunado = this.props.vacunado ? require("../../../assets/icon1.png") : require("../../../assets/icon4.png")
+    const castrado = this.props.castrado ? require("../../../assets/icon2.png") : require("../../../assets/icon5.png")
+    const desparacitado = this.props.desparacitado ? require("../../../assets/icon3.png") : require("../../../assets/icon6.png")
+
     return (
       <View style={{ flexDirection: "row" }}>
         <View style={[styles.healthButton, { flex: 2 }]}>
           <Image
-            source={require("../../../assets/icon1.png")}
+            source={vacunado}
             style={styles.healthIcon}
           />
           <Text style={styles.healthTextTittle}>Vacunado</Text>
         </View>
         <View style={[styles.healthButton, { flex: 2 }]}>
           <Image
-            source={require("../../../assets/icon2.png")}
+            source={castrado}
             style={styles.healthIcon}
           />
           <Text style={styles.healthTextTittle}>Castrado</Text>
         </View>
         <View style={[styles.healthButton, { flex: 2 }]}>
           <Image
-            source={require("../../../assets/icon3.png")}
+            source={desparacitado}
             style={styles.healthIcon}
           />
           <Text style={styles.healthTextTittle}>Desparacitado</Text>
@@ -140,9 +145,10 @@ class Profile extends Component {
             style={{
               paddingLeft: 5,
               paddingRight: 3,
-              backgroundColor: "#FFF",
+              backgroundColor: "#F9F8FD",
               top: -15,
               borderRadius: 20,
+              height: 400
             }}
           >
             <View style={styles.ProfileRow}>{this.renderNavigator()}</View>
