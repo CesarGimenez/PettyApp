@@ -6,6 +6,8 @@ import { initFirebase } from "./src/utils/firebase";
 import OnboardingScreen from "./src/views/OnboardingScreen";
 import Agendar from "./src/views/Agendar";
 import Calendar from "./src/screens/Calendar";
+import News from "./src/screens/News";
+
 import AgendarDone from "./src/views/AgendarDone";
 import Login from "./src/screens/Login";
 import SignIn from "./src/screens/SignIn";
@@ -82,6 +84,11 @@ export default function App() {
         <Stack.Screen
           name="Congrats"
           component={Congrats}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="News"
+          component={News}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
