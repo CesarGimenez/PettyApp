@@ -51,7 +51,10 @@ import {
         {/* Text Container */}
         <Pressable onPress={onPress} style={[styles.textContainer, {flex:2}]}>
           <Text style={styles.heading}>{heading}</Text>
-          <Text style={styles.subheading}>{subheading}</Text>
+          <Text style={styles.subheading}>
+            <Ionicons name="location" size={14}  color={'gray'}/>
+            {subheading}
+          </Text>
 
           <View  style={{flexDirection: "row", width: 250 }}>            
             <Text style={styles.genderContainer}>{description}</Text>
@@ -74,8 +77,8 @@ import {
       flex: 1,
     },
 
-    textContainer: { marginTop: 20, position:'absolute', marginLeft: 150, alignSelf: 'flex-start'},
-    genderContainer: { width: 1, flexGrow: 1, flex: 1, fontSize: 12},
-    heading: { fontSize: 20 },
-    subheading: { fontSize: 13, marginTop: 5 },
+    textContainer: { marginTop: 20, position:'absolute', marginLeft: 150, alignSelf: 'flex-start', color: '#070821'},
+    genderContainer: { width: 1, flexGrow: 1, flex: 1, fontSize: 12, color: '#070821'},
+    heading: { fontSize: 20, color: '#070821', fontWeight:'bold' },
+    subheading: { fontSize: 12, marginTop: 5, color: 'gray' },
   });

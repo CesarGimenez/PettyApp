@@ -11,8 +11,8 @@ import {
   import { useState, useRef } from "react";
   import { Ionicons, FontAwesome } from "@expo/vector-icons";
   
-  const HEIGHT = 225;
-  const WIDTH = Dimensions.get("window").width;
+  const HEIGHT = 140;
+  const WIDTH = (Dimensions.get('window').width) / 2;
   
   export default function Card({
     images,
@@ -49,7 +49,6 @@ import {
 
     const handleFavoriteItemClicked = () => {
       setFavoriteItem(favorite);
-      console.log("make some backend request");
       navigate('PetProfile', {id})
     };
    
@@ -62,7 +61,7 @@ import {
         >
           <Ionicons
             name={"heart-outline"}
-            size={30}
+            size={24}
             color={favoriteItem ? "#6852A5" : "white"}
           />
         </Pressable>
@@ -87,28 +86,13 @@ import {
         />
 
 
-        {/*  Dot Container */}
-        {images.length > 1 && (
-          <View style={styles.dotContainer}>
-            {images.map((_, index) => (
-              <View
-                key={index}
-                style={[
-                  {
-                    opacity: index === activeIndex ? 1 : 0.5,
-                  },
-                  styles.dot,
-                ]}
-              />
-            ))}
-          </View>
-        )}
+        
   
         {/* Text Container */}
         <Pressable onPress={onPress} style={styles.textContainer}>
           <View style={styles.genderContainer}>            
-            <Text style={{ backgroundColor: color, color: fontColor, paddingLeft:10, paddingRight:10, marginLeft: 10, marginRight: 120, borderRadius: 20}}>{age}</Text>
-            <Text style={{marginLeft:120, marginRight:10}}>{iconSexo}</Text>
+            <Text style={{ backgroundColor: color, color: fontColor, paddingLeft:5, paddingRight:5, marginLeft: 2, marginRight: 10, borderRadius: 20}}>{age}</Text>
+            <Text style={{marginLeft:40, marginRight:20}}>{iconSexo}</Text>
           </View>
           
           <Text style={styles.heading}>{heading}</Text>
@@ -120,40 +104,27 @@ import {
   
   const styles = StyleSheet.create({
     cardContainer: {
-      marginTop: 20,
-      paddingHorizontal: 30,
+      marginTop: 15,
+      paddingHorizontal: 12,
       width: WIDTH,
       borderRadius: 10,
     },
     favoriteContainer: {
       position: "absolute",
       top: 10,
-      right: 40,
+      right: 30,
       zIndex: 10,
-      padding: 10,
+      padding: 5,
       backgroundColor: 'white',
       borderRadius: 50
     },
-    imageContainer: { width: WIDTH - 60 },
+    imageContainer: { width: WIDTH - 10 },
     image: {
-      width: "100%",
+      width: "90%",
       height: HEIGHT,
-      borderRadius: 10,
+      borderTopRightRadius: 15,
+      borderTopLeftRadius: 15,
       flex: 1,
-    },
-    dotContainer: {
-      position: "absolute",
-      flexDirection: "row",
-      justifyContent: "center",
-      top: HEIGHT - 20,
-      alignSelf: "center",
-    },
-    dot: {
-      width: 5,
-      height: 5,
-      margin: 3,
-      borderRadius: 30,
-      backgroundColor: "white",
     },
     textContainer: { marginTop: 10 },
     genderContainer: { flexDirection: "row", justifyContent: 'center', alignItems: 'center'},

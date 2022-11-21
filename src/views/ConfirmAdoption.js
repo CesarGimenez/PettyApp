@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   textTitle: {
     fontSize: 25,
     textAlign: "center",
-    color: "black",
+    color: "#070821",
     marginTop: 280,
     alignSelf: "center",
     alignContent: "center",
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   textSubTitle: {
     fontSize: 25,
-    color: "black",
+    color: "#070821",
     marginTop: 10,
     alignSelf: "center",
     alignContent: "center",
@@ -116,14 +116,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   textStyle2: {
-    color: "black",
+    color: "#070821",
     fontWeight: "bold",
     fontSize: 18,
     marginBottom: 10,
   },
   bagde: {
-    width: 100,
-    padding: 10,
+    width: 80,
+    padding: 3,
     borderRadius: 50,
     backgroundColor: "#9B8ACA",
     textAlign: "center",
@@ -142,7 +142,7 @@ const ConfirmAdoption = ({ navigation, route }) => {
       showsVerticalScrollIndicator={false}
       style={{
         height: 100,
-        backgroundColor: "#FFF",
+        backgroundColor: "#F9F8FD",
       }}
     >
       <Text onPress={() => navigation.goBack()}>
@@ -175,7 +175,7 @@ const ConfirmAdoption = ({ navigation, route }) => {
           }}
         />
 
-        <Text style={styles.textTitle}>Informacion de tu nueva mascota</Text>
+        <Text style={styles.textTitle}>Información de tu nueva mascota</Text>
 
         <Text style={styles.textStyle}>Nombre de la mascota</Text>
         <Text style={styles.textStyle2}>{pet?.name}</Text>
@@ -183,7 +183,7 @@ const ConfirmAdoption = ({ navigation, route }) => {
         <Text style={styles.textStyle2}>{pet?.age}</Text>
         <Text style={styles.textStyle}>Raza</Text>
         <Text style={styles.textStyle2}>{pet?.breed}</Text>
-        <Text style={styles.textStyle}>Genero</Text>
+        <Text style={styles.textStyle}>Género</Text>
         {pet?.gender === "M" ? (
           <Text style={styles.bagde}>Macho</Text>
         ) : (
@@ -192,7 +192,7 @@ const ConfirmAdoption = ({ navigation, route }) => {
         <Text
           style={{
             fontSize: 20,
-            color: "black",
+            color: "#070821",
             marginTop: 10,
             alignSelf: "center",
             alignContent: "center",
@@ -252,7 +252,7 @@ const ConfirmAdoption = ({ navigation, route }) => {
         <Text
           style={{
             fontSize: 22,
-            color: "black",
+            color: "#070821",
             marginTop: 20,
             alignSelf: "center",
             alignContent: "center",

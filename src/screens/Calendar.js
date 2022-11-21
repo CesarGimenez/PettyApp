@@ -62,7 +62,7 @@ const Calendar = ({ route, navigation }) => {
             borderRadius: 50,
           }}
         >
-          Proximos
+          Próximos
         </Text>
       </View>
       {pet && hasLogged && (

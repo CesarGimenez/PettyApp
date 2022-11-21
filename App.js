@@ -1,12 +1,9 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { Navigation } from "./src/navigation/Navigation";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { enableScreens } from "react-native-screens";
-import { initFirebase } from "./src/utils/firebase";
 import OnboardingScreen from "./src/views/OnboardingScreen";
 import Agendar from "./src/views/Agendar";
 import Calendar from "./src/screens/Calendar";
-import News from "./src/screens/News";
 
 import AgendarDone from "./src/views/AgendarDone";
 import Login from "./src/screens/Login";
@@ -86,6 +83,8 @@ export default function App() {
           component={Congrats}
           options={{ headerShown: false }}
         />
+
+
       </Stack.Navigator>
     </NavigationContainer>
   );

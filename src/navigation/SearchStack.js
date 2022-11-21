@@ -1,7 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Search } from "../screens";
-import News from "../screens/News";
+import { Search, News } from "../screens";
 
 import { screen } from "../utils";
 
@@ -18,7 +17,7 @@ export function SearchStack() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="News"
+        name={'News'}
         component={News}
         options={{ headerShown: false }}
       />

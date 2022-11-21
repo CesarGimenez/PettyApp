@@ -30,14 +30,17 @@ let styles = StyleSheet.create({
 const Square = ({ selected }) => {
   let backgroundColor;
   backgroundColor = selected ? "#F1A852" : "#E6E7F8";
+  let radius = selected ? 50 : 25;
+  let widthSquare = selected ? 25 : 9;
   return (
     <View
       style={{
-        width: 12,
-        height: 8,
+        width: widthSquare,
+        height: 9,
         marginHorizontal: 3,
         backgroundColor,
         top: -220,
+        borderRadius: radius
       }}
     />
   );
@@ -53,7 +56,7 @@ const Next = ({ isLight, ...props }) => (
     containerViewStyle={{
       backgroundColor: "#9B8ACA",
     }}
-    textStyle={{ color: color(isLight) }}
+    textStyle={{ color: color(isLight), fontWeight: 'bold' }}
     {...props}
   />
 );
@@ -65,7 +68,7 @@ const Done = ({ isLight, ...props }) => (
     containerViewStyle={{
       backgroundColor: "#9B8ACA",
     }}
-    textStyle={{ color: color(isLight) }}
+    textStyle={{ color: color(isLight), fontWeight: 'bold' }}
     {...props}
   />
 );
@@ -89,7 +92,7 @@ const OnboardingScreen = ({ navigation }) => (
             style={styles.image}
           />
         ),
-        title: "Petty uniendo corazones!",
+        title: "Petty uniendo corazones",
         subtitle: "Estás a punto de conocer al nuevo integrante de la familia",
         titleStyles: { color: "#070821", fontWeight: "bold" },
       },
@@ -101,8 +104,8 @@ const OnboardingScreen = ({ navigation }) => (
             style={styles.image}
           />
         ),
-        title: "Es muy facil!",
-        subtitle: "Primero especifica la ubicacion de tu preferencia ",
+        title: "¡Es muy fácil!",
+        subtitle: "Primero especifica la ubicación de tu preferencia ",
         titleStyles: { color: "#070821", fontWeight: "bold" },
       },
       {
@@ -113,9 +116,9 @@ const OnboardingScreen = ({ navigation }) => (
             style={styles.image}
           />
         ),
-        title: "Solo un paso mas!",
+        title: "Estás más cerca",
         subtitle:
-          "Selecciona con cual de nuestros buenos amigos quieres compartir!",
+          "Selecciona con cual de nuestros buenos amigos quieres compartir",
         titleStyles: { color: "#070821", fontWeight: "bold" },
       },
       {
@@ -126,9 +129,9 @@ const OnboardingScreen = ({ navigation }) => (
             style={styles.image}
           />
         ),
-        title: "Llego el momento! ¿estas preparado?",
+        title: "¡Llegó el momento! ¿estás preparado?",
         subtitle:
-          "Selecciona con cual de nuestros buenos amigos quieres compartir!",
+          "Conoce a tu amigo soñado",
         titleStyles: { fontWeight: "bold" },
       },
     ]}

@@ -4,7 +4,6 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
   Image,
   Pressable,
@@ -57,7 +56,7 @@ class Profile extends Component {
   renderDescription = () => {
     return (
       <View>
-        <Text style={styles.detailText}>Caracteristicas</Text>
+        <Text style={styles.detailText}>Características</Text>
         <Text style={styles.subDetailText}>{this.props.description}</Text>
       </View>
     );
@@ -110,7 +109,7 @@ class Profile extends Component {
           </Text>
         </View>
         <View style={[styles.navigatorButton, { flex: 2 }]}>
-          <Text style={styles.navigatorTextTittle}>Genero</Text>
+          <Text style={styles.navigatorTextTittle}>Género</Text>
           <Text style={styles.navigatorTextSubTittle}>{this.props.gender}</Text>
         </View>
       </View>

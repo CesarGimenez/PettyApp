@@ -2303,9 +2303,9 @@
     "wonka" "^4.0.14"
 
 "@xmldom/xmldom@~0.7.0":
-  "integrity" "sha512-V3BIhmY36fXZ1OtVcI9W+FxQqxVLsPKcNjWigIaa81dLC9IolJl5Mt4Cvhmr0flUnjSpTdrbMTSbXqYqV5dT6A=="
-  "resolved" "https://registry.npmjs.org/@xmldom/xmldom/-/xmldom-0.7.5.tgz"
-  "version" "0.7.5"
+  "integrity" "sha512-yceMpm/xd4W2a85iqZyO09gTnHvXF6pyiWjD2jcOJs7hRoZtNNOO1eJlhHj1ixA+xip2hOyGn+LgcvLCMo5zXA=="
+  "resolved" "https://registry.npmjs.org/@xmldom/xmldom/-/xmldom-0.7.9.tgz"
+  "version" "0.7.9"
 
 "abort-controller@^3.0.0":
   "integrity" "sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg=="

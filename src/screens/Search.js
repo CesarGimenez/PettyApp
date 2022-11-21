@@ -7,7 +7,6 @@ import Card from "../components/Card/Card";
 import pettyData from "../../pettyData.json";
 
 const styles = StyleSheet.create({
-  barContainer: { flexDirection: "row", justifyContent: 'center', alignItems: 'center'},
   searchContainer: {backgroundColor: '#F9F8FD'},
   listContainer: {
     marginTop: StatusBar.currentHeight || 0,
@@ -57,7 +56,9 @@ const Search = ({ navigation }) => {
       <FlatList
         style={styles.listContainer}
         data={properties}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
+        numColumns={2}
+        key={item => item.id} 
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <Card

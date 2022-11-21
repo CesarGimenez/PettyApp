@@ -77,7 +77,7 @@ const AgendarDone = ({ navigation, route }) => {
           }}
         >
           {pet?.name || "Sin nombre"} es parte de tu vida,{" "}
-          {pet?.gender === "M" ? "cuidalo" : "cuidala"}!
+          {pet?.gender === "M" ? "cuídalo" : "cuídala"}!
         </Text>
 
         <Button

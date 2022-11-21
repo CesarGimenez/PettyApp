@@ -1,94 +1,185 @@
 [
-    {
-      id: "24reaf6r8er7852u",
-      name: "Petty",
-      breed: "Puddle",
-      age: "Cachorro",
-      age2: "8 meses",
-      weight: 2,
-      gender: 'F',
-      photos: [
-        "https://http2.mlstatic.com/D_NQ_NP_941466-MLV51615850459_092022-V.jpg",
-      ],
-      favorite: true,
-      description: 'Educado en las mejores escuelas para perros',
-      address: 'Altamira, Caracas',
-      vacunado: true,
-      castrado: true,
-      desparacitado: false
-    },
-    {
-      id: "4453fd343",
-      name: "Sparky",
-      breed: "Cruzado",
-      age: "Cachorro",
-      age2: "2 años",
-      weight: 4,
-      gender: 'M',
-      photos: [
-        "https://s3-eu-west-1.amazonaws.com/barkibu-blog/blog+images/a-mi-perro-le-suenan-las-tripas-y-no-quiere-comer-que-puedo-hacer/gases01.jpg?",
+  {
+    "id": "24reaf6r8er7852u",
+    "name": "Petty",
+    "breed": "Puddle",
+    "age": "Cachorro",
+    "age2": "8 meses",
+    "weight": 2,
+    "gender": "F",
+    "photos": [
+      "https://http2.mlstatic.com/D_NQ_NP_941466-MLV51615850459_092022-V.jpg"
+    ],
+    "favorite": true,
+    "description": "Educado en las mejores escuelas para perros",
+    "address": "Altamira, Caracas",
+    "vacunado": true,
+    "castrado": true,
+    "desparacitado": false
+  },
+  {
+    "id": "4453fd343",
+    "name": "Sparky",
+    "breed": "Cruzado",
+    "age": "Cachorro",
+    "age2": "2 años",
+    "weight": 4,
+    "gender": "M",
+    "photos": [
+      "https://s3-eu-west-1.amazonaws.com/barkibu-blog/blog+images/a-mi-perro-le-suenan-las-tripas-y-no-quiere-comer-que-puedo-hacer/gases01.jpg?"
+
+    ],
+    "favorite": true,
+    "description": "Sparky lleva en el refugio desde su nacimiento, le gusta jugar con medias",
+    "address": "Refugio Amor de Mascotas, Chacaito, Caracas",
+    "vacunado": true,
+    "castrado": true,
+    "desparacitado": true
+  },
+  {
+    "id": "2afomeoivi447852u",
+    "name": "Luna",
+    "breed": "Shi Tzu",
+    "age": "Cachorro",
+    "age2": "11 meses",
+    "gender": "F",
+    "weight": 2,
+    "photos": [
+      "https://www.elespectador.com/resizer/RHdl-f8tupZW6MBzHKjah_w4shg=/968x645/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/BMOUODGTDNDTHL3AXKHO2PAGVA.PNG"
+    ],
+    "favorite": true,
+    "description": "Una cachorrita muy fuerte y juguetona",
+    "address": "Fundacion Voluntarios por las Mascotas, Chacaito, Caracas",
+    "vacunado": true,
+    "castrado": true,
+    "desparacitado": false
+  },
+  {
+    "id": "2afomeogdijjnu",
+    "name": "Ponky",
+    "breed": "Corgi",
+    "age": "Adulto",
+    "age2": "3 años",
+    "weight": 3,
+    "gender": "M",
+    "photos": [
+      "https://img.freepik.com/fotos-premium/cachorro-perro-abandonado_601298-571.jpg?w=2000"
+    ],
+    "favorite": true,
+    "description": "Educado en las mejores escuelas para perros",
+    "address": "Fundacion Voluntarios por las Mascotas, Chacaito, Caracas",
+    "vacunado": false,
+    "castrado": true,
+    "desparacitado": false
+  },
+  {
+    "id": "2afomeoias45oe47852u",
+    "name": "Sam",
+    "breed": "Pug",
+    "gender": "M",
+    "weight": 5,
+    "age": "Cachorro",
+    "age2": "1 año",
+    "photos": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/fe/My_pug.jpg"
+    ],
+    "favorite": true,
+    "description": "Le gusta bañarse escuchando música",
+    "address": "Sabana Grande Caracas",
+    "vacunado": true,
+    "castrado": true,
+    "desparacitado": false
+  },
+  {
+    "id": "2afomeoias456e47852u",
+    "name": "Rita",
+    "breed": "Puddle",
+    "gender": "F",
+    "weight": 3,
+    "age": "Cachorro",
+    "age2": "2 meses",
+    "photos": [
+      "https://i.pinimg.com/736x/f9/cd/f9/f9cdf9807c6e607bf3a2c171825cb85a.jpg"
+    ],
+    "favorite": true,
+    "description": "Una cachorrita timida y obediente",
+    "address": "Altamira Caracas",
+    "vacunado": true,
+    "castrado": true,
+    "desparacitado": true
+  }  ,
+  {
+    "id": "2afomeoias45o747852u",
+    "name": "Flofy",
+    "breed": "Dalmata",
+    "gender": "M",
+    "weight": 12,
+    "age": "Cachorro",
+    "age2": "1 año",
+    "photos": [
+      "https://estaticos.muyinteresante.es/uploads/images/gallery/5b166b335bafe8f0cc7acf19/pongo-el-dalmata.jpg"
+    ],
+    "favorite": true,
+    "description": "Alegre y con mucha energia",
+    "address": "Sabana Grande Caracas",
+    "vacunado": true,
+    "castrado": true,
+    "desparacitado": true
+  }  ,
+  {
+    "id": "2afomeoias458e47852u",
+    "name": "Puchi",
+    "breed": "Puddle",
+    "gender": "M",
+    "weight": 8,
+    "age": "Cachorro",
+    "age2": "10 meses",
+    "photos": [
+      "https://us.123rf.com/450wm/thailandonly/thailandonly1305/thailandonly130501403/19828678-perrito-poodle-blanco.jpg?ver=6"
+    ],
+    "favorite": true,
+    "description": "",
+    "address": "Los Dos Caminos Caracas",
+    "vacunado": true,
+    "castrado": false,
+    "desparacitado": true
+  }  ,
+  {
+    "id": "2afomeoias459e47852u",
+    "name": "Maggie",
+    "breed": "Pug",
+    "gender": "F",
+    "weight": 12,
+    "age": "Adulto",
+    "age2": "2 años",
+    "photos": [
+      "https://www.thedelite.com/wp-content/uploads/2020/04/AdobeStock_316181219-scaled.jpeg"
+    ],
+    "favorite": true,
+    "description": "Le gusta bañarse escuchando música",
+    "address": "Altamira Caracas",
+    "vacunado": true,
+    "castrado": true,
+    "desparacitado": true
+  }  ,
+  {
+    "id": "2afomeoias450e47852u",
+    "name": "Lola",
+    "breed": "Doberman",
+    "gender": "F",
+    "weight": 8,
+    "age": "Cachorro",
+    "age2": "1 año",
+    "photos": [
+      "https://i.pinimg.com/564x/ee/fb/3e/eefb3e64ebdcd62454b35fc903182f27.jpg"
+    ],
+    "favorite": true,
+    "description": "Le gusta jugar con pelotas y peluches",
+    "address": "Sabana Grande Caracas",
+    "vacunado": true,
+    "castrado": true,
+    "desparacitado": true
+  }
   
-      ],
-      favorite: true,
-      description: 'Sparky lleva en el refugio desde su nacimiento, le gusta jugar con medias',
-      address: 'Refugio Amor de Mascotas, Chacaito, Caracas',
-      vacunado: true,
-      castrado: true,
-      desparacitado: true
-    },
-    {
-      id: "2afomeoivi447852u",
-      name: "Luna",
-      breed: "Shi Tzu",
-      age: "Cachorro",
-      age2: "11 meses",
-      gender: 'F',
-      weight: 2,
-      photos: [
-        "https://www.elespectador.com/resizer/RHdl-f8tupZW6MBzHKjah_w4shg=/968x645/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/BMOUODGTDNDTHL3AXKHO2PAGVA.PNG",
-      ],
-      favorite: true,
-      description: 'Una cachorrita muy fuerte y juguetona',
-      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas',
-      vacunado: true,
-      castrado: true,
-      desparacitado: false
-    },
-    {
-      id: "2afomeogdijjnu",
-      name: "Ponky",
-      breed: "Corgi",
-      age: "Adulto",
-      age2: "3 años",
-      weight: 3,
-      gender: 'F',
-      photos: [
-        "https://img.freepik.com/fotos-premium/cachorro-perro-abandonado_601298-571.jpg?w=2000",
-      ],
-      favorite: true,
-      description: 'Educado en las mejores escuelas para perros',
-      address: 'Fundacion Voluntarios por las Mascotas, Chacaito, Caracas',
-      vacunado: false,
-      castrado: true,
-      desparacitado: false
-    },
-    {
-      id: "2afomeoias45oe47852u",
-      name: "Sam",
-      breed: "Pug",
-      gender: 'M',
-      weight: 5,
-      age: "Cachorro",
-      age2: "1 año",
-      photos: [
-        "https://upload.wikimedia.org/wikipedia/commons/f/fe/My_pug.jpg",
-      ],
-      favorite: true,
-      description: 'Le gusta bañarse escuchando música',
-      address: 'Sabana Grande Caracas',
-      vacunado: true,
-      castrado: true,
-      desparacitado: false
-    },
-  
-  ];
+    
+]

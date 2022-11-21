@@ -87,7 +87,7 @@ const Agendar = ({ navigation, route }) => {
 
         <Text style={styles.textTitle}>{`FELICIDADES `}</Text>
 
-        <Text style={styles.textSubTitle}>{`estas a solo un paso de `}</Text>
+        <Text style={styles.textSubTitle}>{`estás a solo un paso de `}</Text>
 
         <Text
           style={{
@@ -113,7 +113,7 @@ const Agendar = ({ navigation, route }) => {
             marginBottom: 80,
           }}
         >
-          {`Es tiempo de conocerla `}
+          {`Es tiempo de visitarla `}
         </Text>
 
         <Button
